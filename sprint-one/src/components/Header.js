@@ -1,11 +1,11 @@
 import React from "react";
-
+import logo from "../assets/Logo/Logo-brainflix.svg";
 function Header() {
   return (
     <header>
       <nav className="nav">
         <a href="#" className="nav__logo">
-          <img src="assets/Logo/Logo-brainflix.svg" alt="BrainFlix Logo" />
+          <img src={logo} alt="BrainFlix Logo" />
         </a>
         <ul className="nav__list">
           <li className="nav__item">
