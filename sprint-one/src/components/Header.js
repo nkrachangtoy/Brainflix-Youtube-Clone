@@ -22,9 +22,7 @@ function Header() {
             <button type="submit" className="nav__item--btn"></button>
           </li>
           <li className="nav__item">
-            <div className="nav__item--circle-container">
-              <img src="" alt="Profile Icon" />
-            </div>
+            <div className="nav__item--circle"></div>
           </li>
         </ul>
       </nav>
