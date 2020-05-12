@@ -1,5 +1,5 @@
+@import "./breakpoints";
 // FONT MIXINS //
-
 @mixin header($font-size, $line-height) {
   font-family: "Avenir-Bold";
   font-size: $font-size;
@@ -14,4 +14,34 @@
   font-family: "Avenir-Regular";
   font-size: $font-size;
   line-height: $line-height;
+}
+
+// MARGINS //
+@mixin offset {
+  margin: 0 16px;
+  @include tablet {
+    margin: 0 24px;
+  }
+  @include desktop {
+    margin: 0 180px;
+  }
+}
+
+// PROFILE CIRCLE //
+@mixin circle {
+  border-radius: 50%;
+  background: $silver;
+  height: 48px;
+  width: 48px;
+}
+
+// BUTTON //
+@mixin btn {
+  border-radius: 4px;
+  border-style: 2px solid transparent;
+  border: 2px solid $brainflix-blue;
+  outline: none;
+  color: $white;
+  background: $brainflix-blue;
+  cursor: pointer;
 }

@@ -20,18 +20,23 @@ a {
 
 .nav {
   @extend .container;
-
+  @include offset;
+  display: flex;
+  flex-wrap: wrap;
   &__logo {
   }
   &__list {
     list-style: none;
+    padding: 0;
   }
   &__item {
     &--search-box {
     }
     &--btn {
+      @include btn;
     }
-    &--circle-container {
+    &--circle {
+      @include circle;
     }
   }
 }

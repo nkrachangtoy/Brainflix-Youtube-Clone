@@ -14,7 +14,46 @@ a {
   text-decoration: none;
 }
 
+.nav {
+  margin: 0 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+@media (min-width: 768px) {
+  .nav {
+    margin: 0 24px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .nav {
+    margin: 0 180px;
+  }
+}
+
 .nav__list {
   list-style: none;
+  padding: 0;
+}
+
+.nav__item--btn {
+  border-radius: 4px;
+  border-style: 2px solid transparent;
+  border: 2px solid #0095ff;
+  outline: none;
+  color: #ffffff;
+  background: #0095ff;
+  cursor: pointer;
+}
+
+.nav__item--circle {
+  border-radius: 50%;
+  background: #afafaf;
+  height: 48px;
+  width: 48px;
 }
 /*# sourceMappingURL=main.css.map */
