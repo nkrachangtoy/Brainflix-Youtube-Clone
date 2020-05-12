@@ -1,1 +1,20 @@
-/* No CSS *//*# sourceMappingURL=main.css.map */
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.container, .nav {
+  margin: 0 auto;
+  max-width: 1440px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.nav__list {
+  list-style: none;
+}
+/*# sourceMappingURL=main.css.map */

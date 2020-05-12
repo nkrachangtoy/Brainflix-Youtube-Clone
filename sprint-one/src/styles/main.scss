@@ -1,0 +1,37 @@
+@import "./partials/variables";
+@import "./partials/mixins";
+
+// GLOBAL //
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+// UTILITY CLASS //
+.container {
+  margin: 0 auto;
+  max-width: $desktop-width;
+}
+
+a {
+  text-decoration: none;
+}
+
+.nav {
+  @extend .container;
+
+  &__logo {
+  }
+  &__list {
+    list-style: none;
+  }
+  &__item {
+    &--search-box {
+    }
+    &--btn {
+    }
+    &--circle-container {
+    }
+  }
+}
