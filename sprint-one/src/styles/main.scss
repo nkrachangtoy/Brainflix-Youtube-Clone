@@ -1,42 +1,45 @@
 @import "./partials/variables";
 @import "./partials/mixins";
+@import "./partials/global";
+// @import "./partials/fonts";
 
-// GLOBAL //
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-// UTILITY CLASS //
-.container {
-  margin: 0 auto;
-  max-width: $desktop-width;
-}
-
-a {
-  text-decoration: none;
-}
-
+// HEADER STYLING //
 .nav {
   @extend .container;
   @include offset;
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
   &__logo {
   }
   &__list {
-    list-style: none;
     padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
   }
   &__item {
     &--search-box {
+      background: url("../assets/Icons/SVG/Icon-search.svg");
+      background-repeat: no-repeat;
     }
+
     &--btn {
       @include btn;
     }
     &--circle {
       @include circle;
+      @include profile-img("../assets/Images/Mohan-muruge.jpg");
     }
+  }
+
+  // TABLET MEDIA QUERY //
+  @include tablet {
+  }
+
+  // DESKTOP MEDIA QUERY //
+  @include desktop {
   }
 }
