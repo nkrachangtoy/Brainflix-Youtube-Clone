@@ -1,6 +1,6 @@
 import React from "react";
 
-function MainContent(props) {
+export default function MainContent(props) {
   return (
     <main>
       <section className="video-info">
@@ -30,7 +30,7 @@ function MainContent(props) {
         </div>
       </section>
       <section className="comments">
-        <span className="comments__count">3 Comments</span>
+        <span className="comments__count">{props.count} Comments</span>
         <div className="comments-form">
           <div className="comments-form__profile-icon"></div>
           <div className="comments-form__comment-box--wrapper">
@@ -44,11 +44,18 @@ function MainContent(props) {
               <input
                 type="text"
                 name="addComment"
-                class="comments-form__comment-box"
+                className="comments-form__comment-box"
                 placeholder="Write comment here"
               />
             </form>
-            <button className="comments-form__btn">COMMENT</button>
+            <button
+              type="submit"
+              id="commentCount"
+              onSubmit={props.handleClick}
+              className="comments-form__btn"
+            >
+              COMMENT
+            </button>
           </div>
         </div>
         <ul className="comments-list">
@@ -93,5 +100,3 @@ function MainContent(props) {
     </main>
   );
 }
-
-export default MainContent;

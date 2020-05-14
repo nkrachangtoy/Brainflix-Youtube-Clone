@@ -8,7 +8,7 @@ function Header() {
   return (
     <header>
       <nav className="nav">
-        <a href="#" className="nav__logo">
+        <a href="" className="nav__logo">
           <img src={logo} alt="BrainFlix Logo" />
         </a>
         <ul className="nav__list">

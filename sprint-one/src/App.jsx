@@ -7,6 +7,7 @@ import "./styles/main.css";
 class App extends React.Component {
   // State will contain default comments
   state = {
+    commentCount: 3,
     name: ["Micheal Lyons", "Gary Wong", "Theodore Duncan"],
     date: ["12/18/2018", "12/18/2018", "11/15/2018"],
     comment: [
@@ -16,7 +17,20 @@ class App extends React.Component {
     ],
   };
 
-  // Higher function .map() that loops through state obj and generate array of data
+  // Comment count when adding a new comment
+  handleClick = (clickEvent) => {
+    clickEvent.preventDefault();
+    const formId = clickEvent.target.id;
+    console.log("Old State: ", this.state);
+    this.setState(
+      {
+        [formId]: this.state[formId] + 1,
+      },
+      () => {
+        console.log("New State: ", this.state);
+      }
+    );
+  };
 
   render() {
     return (
@@ -24,6 +38,8 @@ class App extends React.Component {
         <Header />
         <Hero />
         <MainContent
+          count={this.state.commentCount}
+          handleClick={this.handleClick}
           name={this.state.name}
           date={this.state.date}
           comment={this.state.comment}
