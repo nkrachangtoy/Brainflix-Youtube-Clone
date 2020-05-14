@@ -1,6 +1,6 @@
 import React from "react";
 
-function MainContent() {
+function MainContent(props) {
   return (
     <main>
       <section className="video-info">
@@ -32,24 +32,62 @@ function MainContent() {
       <section className="comments">
         <span className="comments__count">3 Comments</span>
         <div className="comments-form">
-          <div className="comments-form__profile-icon">
-            Profile picture will go here
+          <div className="comments-form__profile-icon"></div>
+          <div className="comments-form__comment-box--wrapper">
+            <form>
+              <label
+                htmlFor="addComment"
+                className="comments-form__comment-box--label"
+              >
+                JOIN THE CONVERSATION
+              </label>
+              <input
+                type="text"
+                name="addComment"
+                class="comments-form__comment-box"
+                placeholder="Write comment here"
+              />
+            </form>
+            <button className="comments-form__btn">COMMENT</button>
           </div>
-          <input
-            type="text"
-            name="newComment"
-            class="comments-form__comment-box"
-            placeholder="Write comment here"
-          />
-          <button className="comments-form__btn">COMMENT</button>
         </div>
+        <ul className="comments-list">
+          <li className="comments-list__item">
+            <div className="comments-list__profile-icon"></div>
+            <span className="comments-list__item--name">{props.name[0]}</span>
+            <span className="comments-list__item--date">{props.date[0]}</span>
+            <span className="comments-list__item--comment">
+              {props.comment[0]}
+            </span>
+          </li>
+          <li className="comments-list__item">
+            <div className="comments-list__profile-icon"></div>
+            <span className="comments-list__item--name">{props.name[1]}</span>
+            <span className="comments-list__item--date">{props.date[1]}</span>
+            <span className="comments-list__item--comment">
+              {props.comment[1]}
+            </span>
+          </li>
+          <li className="comments-list__item">
+            <div className="comments-list__profile-icon"></div>
+            <span className="comments-list__item--name">{props.name[2]}</span>
+            <span className="comments-list__item--date">{props.date[2]}</span>
+            <span className="comments-list__item--comment">
+              {props.comment[2]}
+            </span>
+          </li>
+        </ul>
       </section>
       <section className="related">
         <span className="related__title">NEXT VIDEO</span>
         <div className="related-video">
-          <div className="related-video__thumbnail">Video thumbnail</div>
-          <span className="related-video__title">Video title</span>
-          <span className="related-video__creator">Video creator</span>
+          <div className="related-video__thumbnail"></div>
+          <div className="related-video__wrapper">
+            <span className="related-video__title">
+              Become A Travel Pro In One Easy Lesson
+            </span>
+            <span className="related-video__creator">Todd Welch</span>
+          </div>
         </div>
       </section>
     </main>

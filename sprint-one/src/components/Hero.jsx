@@ -1,9 +1,9 @@
 import React from "react";
 
-function Hero(props) {
+function Hero() {
   return (
     <div className="hero">
-      <video src="{props.video}" className="hero__video"></video>
+      <video src="" className="hero__video"></video>
     </div>
   );
 }

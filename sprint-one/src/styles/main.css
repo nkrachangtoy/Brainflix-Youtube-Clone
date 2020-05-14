@@ -5,9 +5,9 @@
           box-sizing: border-box;
 }
 
-.container, .nav, .hero, .video-info {
-  margin: 0 auto;
-  max-width: 1440px;
+body {
+  margin: 0;
+  min-height: 100vh;
 }
 
 a {
@@ -18,9 +18,28 @@ li {
   list-style: none;
 }
 
+.container, .nav, .hero, .video-info, .comments, .comments-list, .related {
+  margin: 0 auto;
+  max-width: 1440px;
+}
+
+@font-face {
+  font-family: "Avenir-Regular";
+  src: url("../assets/Fonts/AvenirNextProLT/AvenirNextLTPro-Regular.otf");
+}
+
+@font-face {
+  font-family: "Avenir-Bold";
+  src: url("../assets/Fonts/AvenirNextProLT/AvenirNextLTPro-Bold.otf");
+}
+
+@font-face {
+  font-family: "Avenir-Demi";
+  src: url("../assets/Fonts/AvenirNextProLT/AvenirNextLTPro-Demi.otf");
+}
+
 .nav {
   margin: 0 16px;
-  max-width: 320px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -62,8 +81,17 @@ li {
 }
 
 .nav__item--search-box {
+  font-family: "Avenir-Regular";
+  font-size: 14px;
+  line-height: 22px;
+  width: 100%;
+  border-radius: 4px;
+  background: #fafafa;
+  outline: none;
+  color: #323232;
   background: url("../assets/Icons/SVG/Icon-search.svg");
   background-repeat: no-repeat;
+  background-position: left;
 }
 
 .nav__item--btn {
@@ -73,6 +101,9 @@ li {
   outline: none;
   color: #ffffff;
   background: #0095ff;
+  font-family: "Avenir-Demi";
+  font-size: 14px;
+  line-height: 22px;
   cursor: pointer;
 }
 
@@ -118,12 +149,13 @@ li {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  border-bottom: 1px solid #e1e1e1;
 }
 
 .video-primary-info__creator {
-  font-family: "Avenir-Regular";
-  font-size: 14px;
-  line-height: 22px;
+  font-family: "Avenir-Demi";
+  font-size: 16px;
+  line-height: 24px;
   color: #323232;
 }
 
@@ -141,6 +173,13 @@ li {
   color: #323232;
 }
 
+.video-primary-info__like-count {
+  font-family: "Avenir-Regular";
+  font-size: 14px;
+  line-height: 22px;
+  color: #323232;
+}
+
 .video-primary-info__icon {
   font-family: "Avenir-Regular";
   font-size: 14px;
@@ -150,7 +189,195 @@ li {
 
 .video-secondary-info__text {
   font-family: "Avenir-Regular";
-  font-size: 13px;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.comments {
+  margin: 0 16px;
+}
+
+@media (min-width: 768px) {
+  .comments {
+    margin: 0 24px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .comments {
+    margin: 0 180px;
+  }
+}
+
+.comments__count {
+  font-family: "Avenir-Demi";
+  font-size: 16px;
+  line-height: 24px;
+  color: #323232;
+}
+
+.comments-form {
+  border-bottom: 1px solid #e1e1e1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-bottom: 24px;
+}
+
+.comments-form__profile-icon {
+  border-radius: 50%;
+  background: #afafaf;
+  height: 48px;
+  width: 48px;
+  background: url("../assets/Images/Mohan-muruge.jpg") no-repeat left;
+  background-size: cover;
+}
+
+.comments-form__comment-box {
+  font-family: "Avenir-Regular";
+  font-size: 14px;
+  line-height: 22px;
+  width: 100%;
+  border-radius: 4px;
+  background: #fafafa;
+  outline: none;
+  color: #323232;
+}
+
+.comments-form__comment-box--wrapper {
+  width: 75%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.comments-form__comment-box--label {
+  font-family: "Avenir-Demi";
+  font-size: 14px;
+  line-height: 24px;
+  color: #afafaf;
+}
+
+.comments-form__btn {
+  border-radius: 4px;
+  border-style: 2px solid transparent;
+  border: 2px solid #0095ff;
+  outline: none;
+  color: #ffffff;
+  background: #0095ff;
+  font-family: "Avenir-Demi";
+  font-size: 14px;
+  line-height: 22px;
+  cursor: pointer;
+}
+
+.comments-list {
+  padding: 0;
+}
+
+.comments-list__profile-icon {
+  border-radius: 50%;
+  background: #afafaf;
+  height: 48px;
+  width: 48px;
+}
+
+.comments-list__item {
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.comments-list__item--profile {
+  border-radius: 50%;
+  background: #afafaf;
+  height: 48px;
+  width: 48px;
+}
+
+.comments-list__item--name {
+  font-family: "Avenir-Demi";
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.comments-list__item--date {
+  font-family: "Avenir-Regular";
+  font-size: 14px;
+  line-height: 22px;
+  color: #afafaf;
+  margin-left: auto;
+}
+
+.comments-list__item--comment {
+  font-family: "Avenir-Regular";
+  font-size: 14px;
   line-height: 18px;
+}
+
+.related {
+  margin: 0 16px;
+}
+
+@media (min-width: 768px) {
+  .related {
+    margin: 0 24px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .related {
+    margin: 0 180px;
+  }
+}
+
+.related__title {
+  font-family: "Avenir-Demi";
+  font-size: 16px;
+  line-height: 24px;
+  color: #afafaf;
+}
+
+.related-video {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.related-video__thumbnail {
+  border-radius: 4px;
+  border: 1px solid black;
+  height: 69px;
+  width: 119px;
+  background: black;
+}
+
+.related-video__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.related-video__title {
+  font-family: "Avenir-Demi";
+  font-size: 14px;
+  line-height: 22px;
+  color: #323232;
+}
+
+.related-video__creator {
+  font-family: "Avenir-Regular";
+  font-size: 14px;
+  line-height: 18px;
+  color: #323232;
 }
 /*# sourceMappingURL=main.css.map */

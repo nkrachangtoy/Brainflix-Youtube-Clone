@@ -1,13 +1,12 @@
 @import "./partials/variables";
 @import "./partials/mixins";
 @import "./partials/global";
-// @import "./partials/fonts";
+@import "./partials/fonts";
 
 // HEADER STYLING //
 .nav {
   @extend .container;
   @include offset;
-  max-width: 320px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -23,8 +22,10 @@
   }
   &__item {
     &--search-box {
+      @include input-box;
       background: url("../assets/Icons/SVG/Icon-search.svg");
       background-repeat: no-repeat;
+      background-position: left;
     }
 
     &--btn {
@@ -50,7 +51,6 @@
   @extend .container;
   background: black;
   &__video {
-    // @include offset;
     // background: white;
   }
 
@@ -76,8 +76,9 @@
 .video-primary-info {
   display: flex;
   flex-wrap: wrap;
+  @include divider;
   &__creator {
-    @include text(14px, 22px);
+    @include subheader(16px, 24px);
     color: $black;
   }
   &__upload-date {
@@ -85,6 +86,10 @@
     color: $silver;
   }
   &__view-count {
+    @include text(14px, 22px);
+    color: $black;
+  }
+  &__like-count {
     @include text(14px, 22px);
     color: $black;
   }
@@ -96,8 +101,96 @@
 // SECONDARY VIDEO INFO //
 .video-secondary-info {
   &__text {
-    @include text(13px, 18px);
+    @include text(14px, 22px);
   }
 }
 
 // COMMENTS SECTION //
+.comments {
+  @extend .container;
+  @include offset;
+  &__count {
+    @include subheader(16px, 24px);
+    color: $black;
+  }
+}
+.comments-form {
+  @include divider;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 24px;
+  &__profile-icon {
+    @include circle;
+    @include profile-img("../assets/Images/Mohan-muruge.jpg");
+  }
+  &__comment-box {
+    &--wrapper {
+      width: 75%;
+      display: flex;
+      flex-direction: column;
+    }
+    @include input-box;
+    &--label {
+      @include subheader(14px, 24px);
+      color: $silver;
+    }
+  }
+  &__btn {
+    @include btn;
+  }
+}
+
+// COMMENT LIST STLYING //
+.comments-list {
+  @extend .container;
+  padding: 0;
+  &__profile-icon {
+    @include circle;
+  }
+  &__item {
+    border-bottom: 1px solid $mercury;
+    &--profile {
+      @include circle;
+    }
+    &--name {
+      @include subheader(14px, 22px);
+    }
+    &--date {
+      @include text(14px, 22px);
+      color: $silver;
+      margin-left: auto;
+    }
+    &--comment {
+      @include text(14px, 18px);
+    }
+  }
+}
+
+// RELATED VIDEO LIST //
+.related {
+  @extend .container;
+  @include offset;
+  &__title {
+    @include subheader(16px, 24px);
+    color: $silver;
+  }
+}
+
+.related-video {
+  display: flex;
+  &__thumbnail {
+    @include thumbnail;
+  }
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  &__title {
+    @include subheader(14px, 22px);
+    color: $black;
+  }
+  &__creator {
+    @include text(14px, 18px);
+    color: $black;
+  }
+}
