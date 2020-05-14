@@ -29,7 +29,7 @@ function Header() {
             </button>
           </li>
           <li className="nav__item">
-            <div className="nav__item--circle"></div>
+            <div className="nav__item--profile-circle"></div>
           </li>
         </ul>
       </nav>

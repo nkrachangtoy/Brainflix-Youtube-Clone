@@ -9,11 +9,11 @@ function MainContent() {
           <span className="video-primary-info__creator">By Red Cow</span>
           <span className="video-primary-info__upload-date">12/18/2018</span>
           <span className="video-primary-info__view-count">
-            <img src="" alt="View Icon" />
+            <img src="" alt="View Icon" className="video-primary-info__icon" />
             1,001,023
           </span>
           <span className="video-primary-info__like-count">
-            <img src="" alt="Like Icon" />
+            <img src="" alt="Like Icon" className="video-primary-info__icon" />
             110,985
           </span>
         </div>

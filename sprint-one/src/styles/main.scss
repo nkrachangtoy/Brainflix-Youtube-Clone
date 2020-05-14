@@ -7,6 +7,7 @@
 .nav {
   @extend .container;
   @include offset;
+  max-width: 320px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -29,7 +30,7 @@
     &--btn {
       @include btn;
     }
-    &--circle {
+    &--profile-circle {
       @include circle;
       @include profile-img("../assets/Images/Mohan-muruge.jpg");
     }
@@ -43,3 +44,60 @@
   @include desktop {
   }
 }
+
+// HERO STYLING //
+.hero {
+  @extend .container;
+  background: black;
+  &__video {
+    // @include offset;
+    // background: white;
+  }
+
+  // TABLET MEDIA QUERY //
+  @include tablet {
+  }
+
+  // DESKTOP MEDIA QUERY //
+  @include desktop {
+  }
+}
+
+// VIDEO INFO //
+.video-info {
+  @extend .container;
+  @include offset;
+  &__title {
+    @include header(24px, 32px);
+    color: $black;
+  }
+}
+// PRIMARY VIDEO INFO //
+.video-primary-info {
+  display: flex;
+  flex-wrap: wrap;
+  &__creator {
+    @include text(14px, 22px);
+    color: $black;
+  }
+  &__upload-date {
+    @include text(14px, 22px);
+    color: $silver;
+  }
+  &__view-count {
+    @include text(14px, 22px);
+    color: $black;
+  }
+  &__icon {
+    @include text(14px, 22px);
+    color: $black;
+  }
+}
+// SECONDARY VIDEO INFO //
+.video-secondary-info {
+  &__text {
+    @include text(13px, 18px);
+  }
+}
+
+// COMMENTS SECTION //
