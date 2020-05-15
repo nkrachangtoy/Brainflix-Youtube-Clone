@@ -25,7 +25,8 @@
       @include input-box;
       background: url("../assets/Icons/SVG/Icon-search.svg");
       background-repeat: no-repeat;
-      background-position: left;
+      background-position: 10px;
+      width: 288px;
     }
 
     &--btn {
@@ -88,14 +89,16 @@
   &__view-count {
     @include text(14px, 22px);
     color: $black;
+    &--icon {
+      color: $black;
+    }
   }
   &__like-count {
     @include text(14px, 22px);
     color: $black;
-  }
-  &__icon {
-    @include text(14px, 22px);
-    color: $black;
+    &--icon {
+      color: $black;
+    }
   }
 }
 // SECONDARY VIDEO INFO //

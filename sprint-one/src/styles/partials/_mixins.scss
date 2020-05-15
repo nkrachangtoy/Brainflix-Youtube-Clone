@@ -44,22 +44,30 @@
 @mixin btn {
   border-radius: 4px;
   border-style: 2px solid transparent;
-  border: 2px solid $brainflix-blue;
+  border: 2px solid transparent;
   outline: none;
   color: $white;
   background: $brainflix-blue;
   @include subheader(14px, 22px);
   cursor: pointer;
+  &:hover {
+    background: $brainflix-blue-dark;
+  }
 }
 
 // INPUT BOX //
 @mixin input-box {
-  @include text(14px, 22px);
+  @include text(16px, 22px);
   width: 100%;
   border-radius: 4px;
+  border: 2px solid $mercury;
   background: $alabaster;
   outline: none;
   color: $black;
+  padding: 16px 32px;
+  &:focus {
+    border: 2px solid $brainflix-blue;
+  }
 }
 
 // DIVIDER //

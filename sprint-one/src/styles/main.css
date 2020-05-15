@@ -82,22 +82,29 @@ li {
 
 .nav__item--search-box {
   font-family: "Avenir-Regular";
-  font-size: 14px;
+  font-size: 16px;
   line-height: 22px;
   width: 100%;
   border-radius: 4px;
+  border: 2px solid #e1e1e1;
   background: #fafafa;
   outline: none;
   color: #323232;
+  padding: 16px 32px;
   background: url("../assets/Icons/SVG/Icon-search.svg");
   background-repeat: no-repeat;
-  background-position: left;
+  background-position: 10px;
+  width: 288px;
+}
+
+.nav__item--search-box:focus {
+  border: 2px solid #0095ff;
 }
 
 .nav__item--btn {
   border-radius: 4px;
   border-style: 2px solid transparent;
-  border: 2px solid #0095ff;
+  border: 2px solid transparent;
   outline: none;
   color: #ffffff;
   background: #0095ff;
@@ -105,6 +112,10 @@ li {
   font-size: 14px;
   line-height: 22px;
   cursor: pointer;
+}
+
+.nav__item--btn:hover {
+  background: #0065ad;
 }
 
 .nav__item--profile-circle {
@@ -173,6 +184,10 @@ li {
   color: #323232;
 }
 
+.video-primary-info__view-count--icon {
+  color: #323232;
+}
+
 .video-primary-info__like-count {
   font-family: "Avenir-Regular";
   font-size: 14px;
@@ -180,10 +195,7 @@ li {
   color: #323232;
 }
 
-.video-primary-info__icon {
-  font-family: "Avenir-Regular";
-  font-size: 14px;
-  line-height: 22px;
+.video-primary-info__like-count--icon {
   color: #323232;
 }
 
@@ -238,13 +250,15 @@ li {
 
 .comments-form__comment-box {
   font-family: "Avenir-Regular";
-  font-size: 14px;
+  font-size: 16px;
   line-height: 22px;
   width: 100%;
   border-radius: 4px;
+  border: 2px solid #e1e1e1;
   background: #fafafa;
   outline: none;
   color: #323232;
+  padding: 16px 32px;
 }
 
 .comments-form__comment-box--wrapper {
@@ -258,6 +272,10 @@ li {
           flex-direction: column;
 }
 
+.comments-form__comment-box:focus {
+  border: 2px solid #0095ff;
+}
+
 .comments-form__comment-box--label {
   font-family: "Avenir-Demi";
   font-size: 14px;
@@ -268,7 +286,7 @@ li {
 .comments-form__btn {
   border-radius: 4px;
   border-style: 2px solid transparent;
-  border: 2px solid #0095ff;
+  border: 2px solid transparent;
   outline: none;
   color: #ffffff;
   background: #0095ff;
@@ -276,6 +294,10 @@ li {
   font-size: 14px;
   line-height: 22px;
   cursor: pointer;
+}
+
+.comments-form__btn:hover {
+  background: #0065ad;
 }
 
 .comments-list {

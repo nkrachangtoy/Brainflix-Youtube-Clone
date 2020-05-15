@@ -1,4 +1,6 @@
 import React from "react";
+import likeIcon from "../assets/Icons/SVG/Icon-likes.svg";
+import viewIcon from "../assets/Icons/SVG/Icon-views.svg";
 
 export default function MainContent(props) {
   return (
@@ -9,11 +11,19 @@ export default function MainContent(props) {
           <span className="video-primary-info__creator">By Red Cow</span>
           <span className="video-primary-info__upload-date">12/18/2018</span>
           <span className="video-primary-info__view-count">
-            <img src="" alt="View Icon" className="video-primary-info__icon" />
+            <img
+              src={viewIcon}
+              alt="View Icon"
+              className="video-primary-info__view-count--icon"
+            />
             1,001,023
           </span>
           <span className="video-primary-info__like-count">
-            <img src="" alt="Like Icon" className="video-primary-info__icon" />
+            <img
+              src={likeIcon}
+              alt="Like Icon"
+              className="video-primary-info__like-count--icon"
+            />
             110,985
           </span>
         </div>
@@ -61,27 +71,21 @@ export default function MainContent(props) {
         <ul className="comments-list">
           <li className="comments-list__item">
             <div className="comments-list__profile-icon"></div>
-            <span className="comments-list__item--name">{props.name[0]}</span>
-            <span className="comments-list__item--date">{props.date[0]}</span>
-            <span className="comments-list__item--comment">
-              {props.comment[0]}
-            </span>
+            <span className="comments-list__item--name">{}</span>
+            <span className="comments-list__item--date">{}</span>
+            <span className="comments-list__item--comment">{}</span>
           </li>
           <li className="comments-list__item">
             <div className="comments-list__profile-icon"></div>
-            <span className="comments-list__item--name">{props.name[1]}</span>
-            <span className="comments-list__item--date">{props.date[1]}</span>
-            <span className="comments-list__item--comment">
-              {props.comment[1]}
-            </span>
+            <span className="comments-list__item--name">{}</span>
+            <span className="comments-list__item--date">{}</span>
+            <span className="comments-list__item--comment">{}</span>
           </li>
           <li className="comments-list__item">
             <div className="comments-list__profile-icon"></div>
-            <span className="comments-list__item--name">{props.name[2]}</span>
-            <span className="comments-list__item--date">{props.date[2]}</span>
-            <span className="comments-list__item--comment">
-              {props.comment[2]}
-            </span>
+            <span className="comments-list__item--name">{}</span>
+            <span className="comments-list__item--date">{}</span>
+            <span className="comments-list__item--comment">{}</span>
           </li>
         </ul>
       </section>
