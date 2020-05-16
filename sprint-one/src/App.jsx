@@ -12,7 +12,7 @@ class App extends React.Component {
     // Default Comments
     commentData: [
       {
-        id: 0,
+        id: 1,
         name: "Micheal Lyons",
         timestamp: "1530744338878",
         comment:
@@ -20,7 +20,7 @@ class App extends React.Component {
         likes: 0,
       },
       {
-        id: 1,
+        id: 2,
         name: "Gary Wong",
         timestamp: "1530744338878",
         comment:
@@ -28,12 +28,22 @@ class App extends React.Component {
         likes: 0,
       },
       {
-        id: 2,
+        id: 3,
         name: "Theodore Duncan",
         timestamp: "1530744138878",
         comment:
           "How can someone be so good!!! You can tell he lives for this and loves to do it every day. Everytime I see him I feel instantly happy! He’s definitely my favorite ever!",
         likes: 0,
+      },
+    ],
+
+    // Icons asset
+    icons: [
+      {
+        likesIcon: "./assets/Icons/SVG/Icon-likes.svg",
+      },
+      {
+        viewsIcon: "./assets/Icons/SVG/Icon-views.svg",
       },
     ],
 
@@ -45,12 +55,12 @@ class App extends React.Component {
         description:
           "On a gusty day in Sounthern Utah, a group of 25 daring mountain bikers blew the doors off what is possible on two wheels, unleashing some of the biggest moments the sport has ever seen. While mother nature only allowed for one full run before the conditions made it impossible to ride, that was all that was needed for event Kyle Strait, who won the event for the second time -- eight years after his first Red Cow Rampage title",
         channel: "Red Cow",
-        image: "./assets/Images/video-list-0.jpg",
+        path: "./assets/Images/video-list-0.jpg",
         views: "1,001,023",
         likes: "110,985",
         duration: "type of <string>",
-        video: "type of <string>",
-        timestamp: "type of <number>",
+        video: "./assets/Video/BrainStation-Sample-Video.mp4",
+        timestamp: "12/18/2018",
         comments: "type of <array>",
       },
     ],
@@ -61,49 +71,49 @@ class App extends React.Component {
         id: 1,
         title: "Become A Travel Pro In One Easy Lesson",
         channel: "Scotty Cranner",
-        image: "./assets/Images/video-list-1.jpg",
+        path: "./assets/Images/video-list-1.jpg",
       },
       {
         id: 2,
         title: "Les Houches The Hidden Gem Of The Chamonix",
         channel: "Cornelia Blair",
-        image: "./assets/Images/video-list-2.jpg",
+        path: "./assets/Images/video-list-2.jpg",
       },
       {
         id: 3,
         title: "Travel Health Useful Medical Information For",
         channel: "Glen Harper",
-        image: "./assets/Images/video-list-3.jpg",
+        path: "./assets/Images/video-list-3.jpg",
       },
       {
         id: 4,
         title: "Cheap Airline Tickets Great Ways to Save",
         channel: "Emily Harper",
-        image: "./assets/Images/video-list-4.jpg",
+        path: "./assets/Images/video-list-4.jpg",
       },
       {
         id: 5,
         title: "Take A Romantic Break In A Boutique Hotel",
         channel: "Ethan Owen",
-        image: "./assets/Images/video-list-5.jpg",
+        path: "./assets/Images/video-list-5.jpg",
       },
       {
         id: 6,
         title: "Choose The Perfect Accommodations",
         channel: "Lydia Perez",
-        image: "./assets/Images/video-list-6.jpg",
+        path: "./assets/Images/video-list-6.jpg",
       },
       {
         id: 7,
         title: "Cruising Destination Ideas",
         channel: "Timothy Austin",
-        image: "./assets/Images/video-list-7.jpg",
+        path: "./assets/Images/video-list-7.jpg",
       },
       {
         id: 8,
         title: "Train Travel On Track For Safety",
         channel: "Scotty Cranmer",
-        image: "./assets/Images/video-list-8.jpg",
+        path: "./assets/Images/video-list-8.jpg",
       },
     ],
   };

@@ -183,6 +183,8 @@
   display: flex;
   &__thumbnail {
     @include thumbnail;
+    &--img {
+    }
   }
   &__wrapper {
     display: flex;
@@ -192,7 +194,7 @@
     @include subheader(14px, 22px);
     color: $black;
   }
-  &__creator {
+  &__channel {
     @include text(14px, 18px);
     color: $black;
   }
