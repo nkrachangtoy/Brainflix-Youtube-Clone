@@ -1,11 +1,11 @@
 // This function will format timestamp and covert into second, minute, hour, day, month, and year + "ago"
 const dateUtil = {
   timeSince(time) {
-    const d = new Date(time);
+    const d = new Date();
     // math.floor is used here to return largest integer
     let seconds = Math.floor((new Date() - time) / 1000);
     let interval = Math.floor(seconds / 31536000);
-    // if statement to calculate the years, months, days, hours, minutes, and seconds.
+    // if statement to calculate seconds to years, months, days, hours, minutes.
     if (interval > 1) {
       return interval + " years ago";
     }
@@ -29,7 +29,8 @@ const dateUtil = {
   },
 };
 
-const timeFomat = () => dateUtil.timeSince();
+const timeFormat = () => dateUtil.timeSince();
+// console.log(timeFormat(1530744338878));
 
-export { timeFomat };
+export { timeFormat };
 export default dateUtil;

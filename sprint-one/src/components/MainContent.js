@@ -1,12 +1,18 @@
 import React from "react";
 import likeIcon from "../assets/Icons/SVG/Icon-likes.svg";
 import viewIcon from "../assets/Icons/SVG/Icon-views.svg";
+import ListComments from "./Comment";
 
-export default function MainContent(props) {
+export default function MainContent({
+  commentData,
+  mainVideo,
+  sideVideo,
+  commentCount,
+}) {
   return (
     <main>
       <section className="video-info">
-        <span className="video-info__title">BMX Rampage: 2018 Highlights</span>
+        <span className="video-info__title">{mainVideo.title}</span>
         <div className="video-primary-info">
           <span className="video-primary-info__creator">By Red Cow</span>
           <span className="video-primary-info__upload-date">12/18/2018</span>
@@ -40,7 +46,7 @@ export default function MainContent(props) {
         </div>
       </section>
       <section className="comments">
-        <span className="comments__count">{props.count} Comments</span>
+        <span className="comments__count"> Comments</span>
         <div className="comments-form">
           <div className="comments-form__profile-icon"></div>
           <div className="comments-form__comment-box--wrapper">
@@ -61,33 +67,22 @@ export default function MainContent(props) {
             <button
               type="submit"
               id="commentCount"
-              onSubmit={props.handleClick}
+              // onSubmit={handleClick}
               className="comments-form__btn"
             >
               COMMENT
             </button>
           </div>
         </div>
-        <ul className="comments-list">
-          <li className="comments-list__item">
-            <div className="comments-list__profile-icon"></div>
-            <span className="comments-list__item--name">{}</span>
-            <span className="comments-list__item--date">{}</span>
-            <span className="comments-list__item--comment">{}</span>
-          </li>
-          <li className="comments-list__item">
-            <div className="comments-list__profile-icon"></div>
-            <span className="comments-list__item--name">{}</span>
-            <span className="comments-list__item--date">{}</span>
-            <span className="comments-list__item--comment">{}</span>
-          </li>
-          <li className="comments-list__item">
-            <div className="comments-list__profile-icon"></div>
-            <span className="comments-list__item--name">{}</span>
-            <span className="comments-list__item--date">{}</span>
-            <span className="comments-list__item--comment">{}</span>
-          </li>
-        </ul>
+        {commentData.map((defaultComment) => (
+          <ListComments
+            key={defaultComment.id}
+            id={defaultComment.id}
+            name={defaultComment.name}
+            timestamp={defaultComment.timestamp}
+            comment={defaultComment.comment}
+          />
+        ))}
       </section>
       <section className="related">
         <span className="related__title">NEXT VIDEO</span>
