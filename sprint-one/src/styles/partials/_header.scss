@@ -5,6 +5,12 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+  @include tablet {
+    margin: 0 auto;
+  }
+  @include desktop {
+    margin: 0 auto;
+  }
   &__logo {
     margin: 12px auto;
     @include tablet {
@@ -30,6 +36,9 @@
       background-position: 10px;
       width: 288px;
       margin-bottom: 8px;
+      @include tablet {
+        margin-bottom: 0;
+      }
     }
 
     &--btn {

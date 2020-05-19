@@ -70,57 +70,52 @@ class App extends React.Component {
         id: 1,
         title: "Become A Travel Pro In One Easy Lesson",
         channel: "Scotty Cranner",
-        path: "./assets/Images/video-list-1.jpg",
+        path: "/video-images/video-list-1.jpg",
       },
       {
         id: 2,
         title: "Les Houches The Hidden Gem Of The Chamonix",
         channel: "Cornelia Blair",
-        path: "./assets/Images/video-list-2.jpg",
+        path: "/video-images/video-list-2.jpg",
       },
       {
         id: 3,
         title: "Travel Health Useful Medical Information For",
         channel: "Glen Harper",
-        path: "./assets/Images/video-list-3.jpg",
+        path: "/video-images/video-list-3.jpg",
       },
       {
         id: 4,
         title: "Cheap Airline Tickets Great Ways to Save",
         channel: "Emily Harper",
-        path: "./assets/Images/video-list-4.jpg",
+        path: "/video-images/video-list-4.jpg",
       },
       {
         id: 5,
         title: "Take A Romantic Break In A Boutique Hotel",
         channel: "Ethan Owen",
-        path: "./assets/Images/video-list-5.jpg",
+        path: "/video-images/video-list-5.jpg",
       },
       {
         id: 6,
         title: "Choose The Perfect Accommodations",
         channel: "Lydia Perez",
-        path: "./assets/Images/video-list-6.jpg",
+        path: "/video-images/video-list-6.jpg",
       },
       {
         id: 7,
         title: "Cruising Destination Ideas",
         channel: "Timothy Austin",
-        path: "./assets/Images/video-list-7.jpg",
+        path: "/video-images/video-list-7.jpg",
       },
       {
         id: 8,
         title: "Train Travel On Track For Safety",
         channel: "Scotty Cranmer",
-        path: "./assets/Images/video-list-8.jpg",
+        path: "/video-images/video-list-8.jpg",
       },
     ],
   };
-
-  // This function will map through commentData array
-  // commentsList = () => {
-  //   this.state.commentData.map((comment) => )
-  // };
 
   // This function will count total number of comments
   handleClick = (clickEvent) => {

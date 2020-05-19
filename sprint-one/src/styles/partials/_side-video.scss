@@ -1,6 +1,5 @@
 .related {
-  @extend .container;
-  @include offset;
+  // @include offset;
   &__title {
     @include subheader(16px, 24px);
     color: $silver;
@@ -19,9 +18,9 @@
   display: flex;
   margin-bottom: 24px;
   &__thumbnail {
-    @include thumbnail;
     margin-right: 16px;
     &--img {
+      @include thumbnail;
     }
   }
   &__wrapper {

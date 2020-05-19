@@ -18,9 +18,17 @@ li {
   list-style: none;
 }
 
-.container, .site-header, .video-player, .video-info, .comments, .comments-list, .related {
+.container, .comment-sidebar-wrapper, .site-header, .video-player, .video-info, .comments, .comments-list {
   margin: 0 auto;
   max-width: 1440px;
+}
+
+.comment-sidebar-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 @font-face {
@@ -62,6 +70,18 @@ li {
 @media (min-width: 1440px) {
   .site-header {
     margin: 0 180px;
+  }
+}
+
+@media (min-width: 768px) {
+  .site-header {
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 1440px) {
+  .site-header {
+    margin: 0 auto;
   }
 }
 
@@ -111,6 +131,12 @@ li {
 
 .nav__item--search-box:focus {
   border: 2px solid #0095ff;
+}
+
+@media (min-width: 768px) {
+  .nav__item--search-box {
+    margin-bottom: 0;
+  }
 }
 
 .nav__item--btn {
@@ -169,23 +195,7 @@ li {
 }
 
 .video-player {
-  margin: 0 16px;
-  position: relative;
-  max-width: 1080px;
-  margin: 0 auto 32px auto;
   background: black;
-}
-
-@media (min-width: 768px) {
-  .video-player {
-    margin: 0 24px;
-  }
-}
-
-@media (min-width: 1440px) {
-  .video-player {
-    margin: 0 180px;
-  }
 }
 
 @media (min-width: 768px) {
@@ -202,6 +212,12 @@ li {
   }
 }
 
+.video-player__container {
+  position: relative;
+  max-width: 1080px;
+  margin: 0 auto 32px auto;
+}
+
 .video-player__video {
   max-width: 100%;
 }
@@ -209,7 +225,8 @@ li {
 .video-player__controls {
   position: absolute;
   z-index: 99;
-  bottom: 0.375rem;
+  bottom: 6px;
+  left: 0;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -220,14 +237,20 @@ li {
 }
 
 .video-player__btn {
-  padding: 0.625rem;
-  margin: 0 0.187rem;
-  border-radius: 0.187rem;
+  padding: 8px 16px;
+  margin: 0 8px;
+  border-radius: 4px;
   color: white;
   background: rgba(0, 0, 0, 0.6);
   border: unset;
   -webkit-box-shadow: unset;
           box-shadow: unset;
+}
+
+@media (min-width: 1440px) {
+  .video-player__btn {
+    margin: 0 16px;
+  }
 }
 
 .video-player__btn:hover, .video-player__btn:focus, .video-player__btn:active {
@@ -247,9 +270,8 @@ li {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
-  margin: 0 0.187rem;
-  padding: 0.625rem;
-  border-radius: 0.187rem;
+  padding: 10px;
+  border-radius: 4px;
   color: white;
   background: rgba(0, 0, 0, 0.6);
   display: -webkit-box;
@@ -290,6 +312,12 @@ li {
   font-size: 14px;
   line-height: 18px;
   display: none;
+}
+
+@media (min-width: 768px) {
+  .video-player__progress-text {
+    display: block;
+  }
 }
 
 .video-info {
@@ -641,22 +669,6 @@ li {
   margin-right: 16px;
 }
 
-.related {
-  margin: 0 16px;
-}
-
-@media (min-width: 768px) {
-  .related {
-    margin: 0 24px;
-  }
-}
-
-@media (min-width: 1440px) {
-  .related {
-    margin: 0 180px;
-  }
-}
-
 .related__title {
   font-family: "Avenir-Demi";
   font-size: 16px;
@@ -683,10 +695,15 @@ li {
 }
 
 .related-video__thumbnail {
-  border-radius: 4px;
-  height: 70px;
-  min-width: 120px;
   margin-right: 16px;
+}
+
+.related-video__thumbnail--img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 4px;
+  width: 120px;
+  height: 70px;
 }
 
 .related-video__wrapper {

@@ -22,3 +22,9 @@ li {
   margin: 0 auto;
   max-width: $desktop-width;
 }
+
+.comment-sidebar-wrapper {
+  @extend .container;
+  display: flex;
+  flex-wrap: wrap;
+}
