@@ -6,11 +6,11 @@ import upload from "../assets/Icons/SVG/Icon-upload.svg";
 // HEADER FUNCTION //
 function Header() {
   return (
-    <header>
+    <header className="site-header">
+      <a href="#HOME" class="site-header__logo">
+        <img src={logo} alt="BrainFlix Logo" />
+      </a>
       <nav className="nav">
-        <a href="#HOME" className="nav__logo">
-          <img src={logo} alt="BrainFlix Logo" />
-        </a>
         <ul className="nav__list">
           <li className="nav__item">
             <form>

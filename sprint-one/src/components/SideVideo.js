@@ -4,7 +4,7 @@ function ListSideVideo({ id, title, channel, path }) {
   return (
     <div className="related-video">
       <div className="related-video__thumbnail">
-        <img className="related-video__thumbnail--img" src={path} alt={title} />
+        <img className="related-video__thumbnail--img" src={path} />
       </div>
       <div className="related-video__wrapper">
         <span className="related-video__title">{title}</span>

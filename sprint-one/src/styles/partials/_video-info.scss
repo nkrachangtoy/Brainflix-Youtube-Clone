@@ -1,0 +1,86 @@
+.video-info {
+  @extend .container;
+  @include offset;
+  &__title {
+    @include header(24px, 32px);
+    color: $black;
+  }
+  // TABLET MEDIA QUERY //
+  @include tablet {
+    max-width: 720px;
+  }
+
+  // DESKTOP MEDIA QUERY //
+  @include desktop {
+    max-width: 712px;
+  }
+}
+// PRIMARY VIDEO INFO //
+.video-primary-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 16px 0 24px 0;
+  @include divider;
+  &__left-renderer {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+    &--channel-name {
+      @include subheader(18px, 24px);
+      color: $black;
+    }
+    &--upload-date {
+      @include text(16px, 22px);
+      color: $silver;
+      margin-left: 16px;
+    }
+  }
+  &__right-renderer {
+    // margin-top: 32px;
+    margin-bottom: 24px;
+    display: flex;
+    &--views {
+      @include text(14px, 22px);
+      color: $black;
+      display: flex;
+      align-items: center;
+    }
+    &--likes {
+      @include text(14px, 22px);
+      color: $black;
+      display: flex;
+      align-items: center;
+      margin-left: 16px;
+    }
+  }
+  &__icon {
+    margin-right: 8px;
+  }
+
+  // TABLET MEDIA QUERY //
+  @include tablet {
+    max-width: 720px;
+  }
+
+  // DESKTOP MEDIA QUERY //
+  @include desktop {
+    max-width: 712px;
+  }
+}
+// SECONDARY VIDEO INFO //
+.video-secondary-info {
+  &__text {
+    margin: 0 0 40px 0;
+    @include text(14px, 22px);
+  }
+  @include tablet {
+    max-width: 720px;
+  }
+
+  // DESKTOP MEDIA QUERY //
+  @include desktop {
+    max-width: 712px;
+  }
+}

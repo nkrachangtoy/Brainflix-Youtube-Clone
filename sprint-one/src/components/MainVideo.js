@@ -1,30 +1,42 @@
 import React from "react";
+import playIcon from "../assets/Icons/SVG/Icon-play.svg";
+import pauseIcon from "../assets/Icons/SVG/Icon-pause.svg";
+import fullScreenIcon from "../assets/Icons/SVG/Icon-fullscreen.svg";
+import volumeIcon from "../assets/Icons/SVG/Icon-volume.svg";
+import scrubberIcon from "../assets/Icons/SVG/Icon-scrubber-control.svg";
+import poster from "../assets/Images/video-list-0.jpg";
 
-function MainVideo() {
+function MainVideo(mainVideo) {
   return (
-    <div class="video-player">
-      <div class="video-player__controls">
-        <button class="video-player__btn">
-          <i class="fas fa-play"></i>
+    <div className="video-player">
+      <div className="video-player__controls">
+        <button className="video-player__btn">
+          <img src={playIcon} alt=""></img>
         </button>
 
-        <div class="video-player__progress-bar">
-          <div class="video-player__progress-timeline">
-            <div class="video-player__progress-scrubber"></div>
+        <div className="video-player__progress-bar">
+          <div className="video-player__progress-timeline">
+            <img
+              className="video-player__progress-scrubber"
+              src={scrubberIcon}
+              alt=""
+            ></img>
           </div>
-          <div class="video-player__progress-text">0:00 / 0:42</div>
+          <div className="video-player__progress-text">
+            0:00 /{mainVideo.duration}
+          </div>
         </div>
 
-        <div class="video-player__btn-group">
-          <button class="video-player__btn">
-            <i class="fas fa-expand"></i>
+        <div className="video-player__btn-group">
+          <button className="video-player__btn">
+            <img src={fullScreenIcon} alt=""></img>
           </button>
-          <button class="video-player__btn">
-            <i class="fas fa-volume-up"></i>
+          <button className="video-player__btn">
+            <img src={volumeIcon} alt=""></img>
           </button>
         </div>
       </div>
-      <video poster="" class="video-player__video" src=""></video>
+      <video poster={poster} className="video-player__video" src=""></video>
     </div>
   );
 }

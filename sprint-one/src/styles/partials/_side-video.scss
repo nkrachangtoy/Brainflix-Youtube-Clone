@@ -1,0 +1,47 @@
+.related {
+  @extend .container;
+  @include offset;
+
+  &__title {
+    @include subheader(16px, 24px);
+    color: $silver;
+    margin-bottom: 40px;
+  }
+  &__video-list-wrapper {
+    margin-top: 40px;
+  }
+  // DESKTOP MEDIA QUERY //
+  @include desktop {
+    width: 368px;
+  }
+}
+
+.related-video {
+  display: flex;
+  margin-bottom: 24px;
+  &__thumbnail {
+    @include thumbnail;
+    margin-right: 16px;
+    &--img {
+    }
+  }
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 152px;
+  }
+  &__title {
+    @include subheader(14px, 22px);
+    color: $black;
+    /*Limit text to 2 lines*/
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  &__channel {
+    @include text(14px, 18px);
+    color: $black;
+  }
+}

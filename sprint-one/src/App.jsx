@@ -49,22 +49,20 @@ class App extends React.Component {
     ],
 
     // Main Video
-    mainVideo: [
-      {
-        id: 1,
-        title: "BMX Rampage: 2018 Highlights",
-        description:
-          "On a gusty day in Sounthern Utah, a group of 25 daring mountain bikers blew the doors off what is possible on two wheels, unleashing some of the biggest moments the sport has ever seen. While mother nature only allowed for one full run before the conditions made it impossible to ride, that was all that was needed for event Kyle Strait, who won the event for the second time -- eight years after his first Red Cow Rampage title",
-        channel: "Red Cow",
-        path: "./assets/Images/video-list-0.jpg",
-        views: "1,001,023",
-        likes: "110,985",
-        duration: "type of <string>",
-        video: "./assets/Video/BrainStation-Sample-Video.mp4",
-        timestamp: "12/18/2018",
-        comments: "type of <array>",
-      },
-    ],
+    mainVideo: {
+      id: 1,
+      title: "BMX Rampage: 2018 Highlights",
+      description:
+        "On a gusty day in Sounthern Utah, a group of 25 daring mountain bikers blew the doors off what is possible on two wheels, unleashing some of the biggest moments the sport has ever seen. While mother nature only allowed for one full run before the conditions made it impossible to ride, that was all that was needed for event Kyle Strait, who won the event for the second time -- eight years after his first Red Cow Rampage title",
+      channel: "Red Cow",
+      path: "./assets/Images/video-list-0.jpg",
+      views: "1,001,023",
+      likes: "110,985",
+      duration: "0:42",
+      video: "./assets/Video/BrainStation-Sample-Video.mp4",
+      timestamp: 1530744338878,
+      comments: "type of <array>",
+    },
 
     // Side Video
     sideVideo: [
@@ -72,49 +70,49 @@ class App extends React.Component {
         id: 1,
         title: "Become A Travel Pro In One Easy Lesson",
         channel: "Scotty Cranner",
-        path: "./assets/Images/video-list-1.jpg",
+        path: "../assets/Images/video-list-1.jpg",
       },
       {
         id: 2,
         title: "Les Houches The Hidden Gem Of The Chamonix",
         channel: "Cornelia Blair",
-        path: "./assets/Images/video-list-2.jpg",
+        path: "../assets/Images/video-list-2.jpg",
       },
       {
         id: 3,
         title: "Travel Health Useful Medical Information For",
         channel: "Glen Harper",
-        path: "./assets/Images/video-list-3.jpg",
+        path: "../assets/Images/video-list-3.jpg",
       },
       {
         id: 4,
         title: "Cheap Airline Tickets Great Ways to Save",
         channel: "Emily Harper",
-        path: "./assets/Images/video-list-4.jpg",
+        path: "../assets/Images/video-list-4.jpg",
       },
       {
         id: 5,
         title: "Take A Romantic Break In A Boutique Hotel",
         channel: "Ethan Owen",
-        path: "./assets/Images/video-list-5.jpg",
+        path: "../assets/Images/video-list-5.jpg",
       },
       {
         id: 6,
         title: "Choose The Perfect Accommodations",
         channel: "Lydia Perez",
-        path: "./assets/Images/video-list-6.jpg",
+        path: "../assets/Images/video-list-6.jpg",
       },
       {
         id: 7,
         title: "Cruising Destination Ideas",
         channel: "Timothy Austin",
-        path: "./assets/Images/video-list-7.jpg",
+        path: "../assets/Images/video-list-7.jpg",
       },
       {
         id: 8,
         title: "Train Travel On Track For Safety",
         channel: "Scotty Cranmer",
-        path: "./assets/Images/video-list-8.jpg",
+        path: "../assets/Images/video-list-8.jpg",
       },
     ],
   };
@@ -143,7 +141,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <Header />
-        <MainVideo />
+        <MainVideo mainVideo={this.state.mainVideo} />
         <MainContent
           commentData={this.state.commentData}
           mainVideo={this.state.mainVideo}

@@ -42,13 +42,13 @@
 
 // BUTTON //
 @mixin btn {
+  @include subheader(14px, 22px);
+  background: $brainflix-blue;
   border-radius: 4px;
   border-style: 2px solid transparent;
   border: 2px solid transparent;
   outline: none;
   color: $white;
-  background: $brainflix-blue;
-  @include subheader(14px, 22px);
   cursor: pointer;
   &:hover {
     background: $brainflix-blue-dark;
@@ -58,6 +58,7 @@
 // INPUT BOX //
 @mixin input-box {
   @include text(16px, 22px);
+  height: 48px;
   width: 100%;
   border-radius: 4px;
   border: 2px solid $mercury;
@@ -78,7 +79,6 @@
 // VIDEO IMAGES //
 @mixin thumbnail {
   border-radius: 4px;
-  border: 1px solid transparent;
-  height: 69px;
-  width: 119px;
+  height: 70px;
+  min-width: 120px;
 }
