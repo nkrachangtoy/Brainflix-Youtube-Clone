@@ -1,7 +1,6 @@
 .related {
   @extend .container;
   @include offset;
-
   &__title {
     @include subheader(16px, 24px);
     color: $silver;

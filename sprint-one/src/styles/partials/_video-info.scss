@@ -4,6 +4,9 @@
   &__title {
     @include header(24px, 32px);
     color: $black;
+    @include tablet {
+      @include header(36px, 44px);
+    }
   }
   // TABLET MEDIA QUERY //
   @include tablet {
@@ -53,6 +56,9 @@
       display: flex;
       align-items: center;
       margin-left: 16px;
+      @include desktop {
+        margin-right: 32px;
+      }
     }
   }
   &__icon {

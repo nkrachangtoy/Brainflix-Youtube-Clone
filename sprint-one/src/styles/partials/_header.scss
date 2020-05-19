@@ -4,8 +4,12 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: space-between;
   &__logo {
-    margin-right: auto;
+    margin: 12px auto;
+    @include tablet {
+      margin: 12px 0;
+    }
   }
 }
 
@@ -25,17 +29,19 @@
       background-repeat: no-repeat;
       background-position: 10px;
       width: 288px;
+      margin-bottom: 8px;
     }
 
     &--btn {
       @include btn;
       padding: 11px 11px;
-      max-width: 224px;
+      width: 224px;
       display: flex;
       justify-content: center;
       align-items: baseline;
       @include tablet {
         margin-left: 24px;
+        width: 96px;
       }
     }
     &--icon {
@@ -49,13 +55,5 @@
         margin-left: 24px;
       }
     }
-  }
-
-  // TABLET MEDIA QUERY //
-  @include tablet {
-  }
-
-  // DESKTOP MEDIA QUERY //
-  @include desktop {
   }
 }
