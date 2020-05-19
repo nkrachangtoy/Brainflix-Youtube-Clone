@@ -1,9 +1,10 @@
 import React from "react";
+import MainVideo from "./MainVideo";
 
-function Hero() {
+function Hero(mainVideo) {
   return (
     <div className="hero">
-      <video src="" className="hero__video"></video>
+      <MainVideo />
     </div>
   );
 }

@@ -8,7 +8,7 @@ function Header() {
   return (
     <header>
       <nav className="nav">
-        <a href="" className="nav__logo">
+        <a href="#HOME" className="nav__logo">
           <img src={logo} alt="BrainFlix Logo" />
         </a>
         <ul className="nav__list">
@@ -24,7 +24,11 @@ function Header() {
           </li>
           <li className="nav__item">
             <button type="submit" className="nav__item--btn">
-              <img src={upload} alt="Upload Plus Icon" />
+              <img
+                src={upload}
+                alt="Upload Plus Icon"
+                className="nav__item--icon"
+              />
               UPLOAD
             </button>
           </li>

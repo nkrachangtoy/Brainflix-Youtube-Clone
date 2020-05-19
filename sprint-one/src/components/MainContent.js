@@ -15,28 +15,32 @@ export default function MainContent({
       <section className="video-info">
         <span className="video-info__title">{mainVideo[0].title}</span>
         <div className="video-primary-info">
-          <span className="video-primary-info__creator">
-            By {mainVideo[0].channel}
-          </span>
-          <span className="video-primary-info__upload-date">
-            {mainVideo[0].timestamp}
-          </span>
-          <span className="video-primary-info__view-count">
-            <img
-              src={viewIcon}
-              alt="View Icon"
-              className="video-primary-info__view-count--icon"
-            />
-            {mainVideo[0].views}
-          </span>
-          <span className="video-primary-info__like-count">
-            <img
-              src={likeIcon}
-              alt="Like Icon"
-              className="video-primary-info__like-count--icon"
-            />
-            {mainVideo[0].likes}
-          </span>
+          <div className="video-primary-info__left-renderer">
+            <span className="video-primary-info__left-renderer--channel-name">
+              By {mainVideo[0].channel}
+            </span>
+            <span className="video-primary-info__left-renderer--upload-date">
+              {mainVideo[0].timestamp}
+            </span>
+          </div>
+          <div className="video-primary-info__right-renderer">
+            <span className="video-primary-info__right-renderer--views">
+              <img
+                src={viewIcon}
+                alt="View Icon"
+                className="video-primary-info__icon"
+              />
+              {mainVideo[0].views}
+            </span>
+            <span className="video-primary-info__right-renderer--likes">
+              <img
+                src={likeIcon}
+                alt="Like Icon"
+                className="video-primary-info__icon"
+              />
+              {mainVideo[0].likes}
+            </span>
+          </div>
         </div>
         <div className="video-secondary-info">
           <p className="video-secondary-info__text">
@@ -48,7 +52,7 @@ export default function MainContent({
         <span className="comments__count">{count} Comments</span>
         <div className="comments-form">
           <div className="comments-form__profile-icon"></div>
-          <div className="comments-form__comment-box--wrapper">
+          <div className="comments-form__comment-box-wrapper">
             <form>
               <label
                 htmlFor="addComment"

@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
+import MainVideo from "./components/MainVideo";
 import MainContent from "./components/MainContent";
 import "./styles/main.css";
 
@@ -142,7 +143,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <Header />
-        <Hero />
+        <MainVideo />
         <MainContent
           commentData={this.state.commentData}
           mainVideo={this.state.mainVideo}

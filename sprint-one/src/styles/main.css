@@ -18,7 +18,7 @@ li {
   list-style: none;
 }
 
-.container, .nav, .hero, .video-info, .comments, .comments-list, .related {
+.container, .nav, .hero, .video-player, .video-info, .comments, .comments-list, .related {
   margin: 0 auto;
   max-width: 1440px;
 }
@@ -75,9 +75,6 @@ li {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
 }
 
 .nav__item--search-box {
@@ -90,7 +87,7 @@ li {
   background: #fafafa;
   outline: none;
   color: #323232;
-  padding: 16px 32px;
+  padding: 12px 32px;
   background: url("../assets/Icons/SVG/Icon-search.svg");
   background-repeat: no-repeat;
   background-position: 10px;
@@ -112,10 +109,25 @@ li {
   font-size: 14px;
   line-height: 22px;
   cursor: pointer;
+  padding: 11px 0;
+  width: 224px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
 }
 
 .nav__item--btn:hover {
   background: #0065ad;
+}
+
+.nav__item--icon {
+  margin-right: 16px;
 }
 
 .nav__item--profile-circle {
@@ -125,10 +137,117 @@ li {
   width: 48px;
   background: url("../assets/Images/Mohan-muruge.jpg") no-repeat left;
   background-size: cover;
+  margin-left: 16px;
 }
 
 .hero {
   background: black;
+  margin-bottom: 32px;
+}
+
+.video-player {
+  margin: 0 16px;
+  position: relative;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .video-player {
+    margin: 0 24px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .video-player {
+    margin: 0 180px;
+  }
+}
+
+.video-player__video {
+  max-width: 100%;
+}
+
+.video-player__controls {
+  position: absolute;
+  z-index: 99;
+  bottom: 0.375rem;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.video-player__btn {
+  padding: 0.625rem;
+  margin: 0 0.187rem;
+  border-radius: 0.187rem;
+  color: white;
+  background: rgba(0, 0, 0, 0.6);
+  border: unset;
+  -webkit-box-shadow: unset;
+          box-shadow: unset;
+}
+
+.video-player__btn:hover, .video-player__btn:focus, .video-player__btn:active {
+  cursor: pointer;
+  background: black;
+  outline: 0;
+}
+
+.video-player__btn-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.video-player__progress-bar {
+  position: relative;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  margin: 0 0.187rem;
+  padding: 0.625rem;
+  border-radius: 0.187rem;
+  color: white;
+  background: rgba(0, 0, 0, 0.6);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.video-player__progress-timeline {
+  height: 0.187rem;
+  margin-right: 0.625rem;
+  background: grey;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.video-player__progress-scrubber {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: white;
+  border-radius: 50%;
+  left: 0.624rem;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.video-player__progress-text {
+  text-align: center;
 }
 
 .video-info {
@@ -160,46 +279,81 @@ li {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 16px 0 24px 0;
   border-bottom: 1px solid #e1e1e1;
 }
 
-.video-primary-info__creator {
+.video-primary-info__left-renderer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 24px;
+}
+
+.video-primary-info__left-renderer--channel-name {
   font-family: "Avenir-Demi";
-  font-size: 16px;
+  font-size: 18px;
   line-height: 24px;
   color: #323232;
 }
 
-.video-primary-info__upload-date {
+.video-primary-info__left-renderer--upload-date {
   font-family: "Avenir-Regular";
-  font-size: 14px;
+  font-size: 16px;
   line-height: 22px;
   color: #afafaf;
+  margin-left: 16px;
 }
 
-.video-primary-info__view-count {
+.video-primary-info__right-renderer {
+  margin-bottom: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.video-primary-info__right-renderer--views {
   font-family: "Avenir-Regular";
   font-size: 14px;
   line-height: 22px;
   color: #323232;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.video-primary-info__view-count--icon {
-  color: #323232;
-}
-
-.video-primary-info__like-count {
+.video-primary-info__right-renderer--likes {
   font-family: "Avenir-Regular";
   font-size: 14px;
   line-height: 22px;
   color: #323232;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 16px;
 }
 
-.video-primary-info__like-count--icon {
-  color: #323232;
+.video-primary-info__icon {
+  margin-right: 8px;
 }
 
 .video-secondary-info__text {
+  margin: 0 0 40px 0;
   font-family: "Avenir-Regular";
   font-size: 14px;
   line-height: 22px;
@@ -230,13 +384,11 @@ li {
 
 .comments-form {
   border-bottom: 1px solid #e1e1e1;
+  padding-bottom: 24px;
+  margin-top: 32px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  padding-bottom: 24px;
 }
 
 .comments-form__profile-icon {
@@ -246,6 +398,17 @@ li {
   width: 48px;
   background: url("../assets/Images/Mohan-muruge.jpg") no-repeat left;
   background-size: cover;
+  margin-right: 16px;
+  margin-top: 24px;
+}
+
+.comments-form__comment-box-wrapper {
+  width: 75%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .comments-form__comment-box {
@@ -258,18 +421,8 @@ li {
   background: #fafafa;
   outline: none;
   color: #323232;
-  padding: 16px 32px;
-}
-
-.comments-form__comment-box--wrapper {
-  width: 75%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  padding: 12px 32px;
+  margin-bottom: 16px;
 }
 
 .comments-form__comment-box:focus {
@@ -294,6 +447,14 @@ li {
   font-size: 14px;
   line-height: 22px;
   cursor: pointer;
+  padding: 11px 0;
+  width: 224px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .comments-form__btn:hover {
@@ -304,22 +465,19 @@ li {
   padding: 0;
 }
 
-.comments-list__profile-icon {
-  border-radius: 50%;
-  background: #afafaf;
-  height: 48px;
-  width: 48px;
+.comments-list:last-child {
+  margin-bottom: 40px;
 }
 
 .comments-list__item {
   border-bottom: 1px solid #e1e1e1;
-}
-
-.comments-list__item--profile {
-  border-radius: 50%;
-  background: #afafaf;
-  height: 48px;
-  width: 48px;
+  margin-top: 24px;
+  padding-bottom: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .comments-list__item--name {
@@ -340,6 +498,15 @@ li {
   font-family: "Avenir-Regular";
   font-size: 14px;
   line-height: 18px;
+  margin-left: 62px;
+}
+
+.comments-list__item--profile-icon {
+  border-radius: 50%;
+  background: #afafaf;
+  height: 48px;
+  width: 48px;
+  margin-right: 16px;
 }
 
 .related {

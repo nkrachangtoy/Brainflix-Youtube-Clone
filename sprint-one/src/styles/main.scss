@@ -18,7 +18,6 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
   }
   &__item {
     &--search-box {
@@ -31,10 +30,19 @@
 
     &--btn {
       @include btn;
+      padding: 11px 0;
+      width: 224px;
+      display: flex;
+      justify-content: center;
+      align-items: baseline;
+    }
+    &--icon {
+      margin-right: 16px;
     }
     &--profile-circle {
       @include circle;
       @include profile-img("../assets/Images/Mohan-muruge.jpg");
+      margin-left: 16px;
     }
   }
 
@@ -51,16 +59,76 @@
 .hero {
   @extend .container;
   background: black;
+  margin-bottom: 32px;
+}
+
+// MAIN VIDEO PLAYER
+.video-player {
+  @extend .container;
+  @include offset;
+  position: relative;
+  max-width: $desktop-width;
+  margin: 0 auto;
   &__video {
-    // background: white;
+    max-width: 100%;
   }
-
-  // TABLET MEDIA QUERY //
-  @include tablet {
+  &__controls {
+    position: absolute;
+    z-index: 99;
+    bottom: 0.375rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
   }
-
-  // DESKTOP MEDIA QUERY //
-  @include desktop {
+  &__btn {
+    padding: 0.625rem;
+    margin: 0 0.187rem;
+    border-radius: 0.187rem;
+    color: white;
+    background: rgba(black, 0.6);
+    border: unset;
+    box-shadow: unset;
+    &:hover,
+    &:focus,
+    &:active {
+      cursor: pointer;
+      background: rgba(black, 1);
+      outline: 0;
+    }
+  }
+  &__btn-group {
+    display: flex;
+  }
+  &__progress-bar {
+    position: relative;
+    flex-grow: 1;
+    margin: 0 0.187rem;
+    padding: 0.625rem;
+    border-radius: 0.187rem;
+    color: white;
+    background: rgba(black, 0.6);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__progress-timeline {
+    height: 0.187rem;
+    margin-right: 0.625rem;
+    background: grey;
+    flex-grow: 1;
+  }
+  &__progress-scrubber {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: white;
+    border-radius: 50%;
+    left: 0.624rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  &__progress-text {
+    text-align: center;
   }
 }
 
@@ -77,33 +145,50 @@
 .video-primary-info {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 16px 0 24px 0;
   @include divider;
-  &__creator {
-    @include subheader(16px, 24px);
-    color: $black;
-  }
-  &__upload-date {
-    @include text(14px, 22px);
-    color: $silver;
-  }
-  &__view-count {
-    @include text(14px, 22px);
-    color: $black;
-    &--icon {
+  &__left-renderer {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+    &--channel-name {
+      @include subheader(18px, 24px);
       color: $black;
     }
-  }
-  &__like-count {
-    @include text(14px, 22px);
-    color: $black;
-    &--icon {
-      color: $black;
+    &--upload-date {
+      @include text(16px, 22px);
+      color: $silver;
+      margin-left: 16px;
     }
+  }
+  &__right-renderer {
+    // margin-top: 32px;
+    margin-bottom: 24px;
+    display: flex;
+    &--views {
+      @include text(14px, 22px);
+      color: $black;
+      display: flex;
+      align-items: center;
+    }
+    &--likes {
+      @include text(14px, 22px);
+      color: $black;
+      display: flex;
+      align-items: center;
+      margin-left: 16px;
+    }
+  }
+  &__icon {
+    margin-right: 8px;
   }
 }
 // SECONDARY VIDEO INFO //
 .video-secondary-info {
   &__text {
+    margin: 0 0 40px 0;
     @include text(14px, 22px);
   }
 }
@@ -119,20 +204,24 @@
 }
 .comments-form {
   @include divider;
-  display: flex;
-  justify-content: space-between;
   padding-bottom: 24px;
+  margin-top: 32px;
+  display: flex;
   &__profile-icon {
     @include circle;
     @include profile-img("../assets/Images/Mohan-muruge.jpg");
+    margin-right: 16px;
+    margin-top: 24px;
+  }
+  &__comment-box-wrapper {
+    width: 75%;
+    display: flex;
+    flex-wrap: wrap;
   }
   &__comment-box {
-    &--wrapper {
-      width: 75%;
-      display: flex;
-      flex-direction: column;
-    }
     @include input-box;
+    margin-bottom: 16px;
+
     &--label {
       @include subheader(14px, 24px);
       color: $silver;
@@ -140,6 +229,10 @@
   }
   &__btn {
     @include btn;
+    padding: 11px 0;
+    width: 224px;
+    display: flex;
+    justify-content: center;
   }
 }
 
@@ -147,14 +240,16 @@
 .comments-list {
   @extend .container;
   padding: 0;
-  &__profile-icon {
-    @include circle;
+
+  &:last-child {
+    margin-bottom: 40px;
   }
   &__item {
     border-bottom: 1px solid $mercury;
-    &--profile {
-      @include circle;
-    }
+    margin-top: 24px;
+    padding-bottom: 24px;
+    display: flex;
+    flex-wrap: wrap;
     &--name {
       @include subheader(14px, 22px);
     }
@@ -165,6 +260,11 @@
     }
     &--comment {
       @include text(14px, 18px);
+      margin-left: 62px;
+    }
+    &--profile-icon {
+      @include circle;
+      margin-right: 16px;
     }
   }
 }
