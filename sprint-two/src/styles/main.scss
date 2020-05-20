@@ -1,0 +1,19 @@
+@import "./partials/variables";
+@import "./partials/mixins";
+@import "./partials/global";
+@import "./partials/fonts";
+
+// HEADER STYLING //
+@import "./partials/header";
+
+// HERO STYLING //
+@import "./partials/main-video";
+
+// VIDEO INFO //
+@import "./partials/video-info";
+
+// COMMENTS SECTION //
+@import "./partials/comment-section";
+
+// RELATED VIDEO LIST //
+@import "./partials/side-video";

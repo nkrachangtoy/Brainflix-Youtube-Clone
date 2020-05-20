@@ -1,0 +1,54 @@
+.related {
+  padding: 32px 0 0 16px;
+  &__title {
+    @include subheader(16px, 24px);
+    color: $silver;
+    margin-bottom: 40px;
+  }
+  &__video-list-wrapper {
+    margin-top: 40px;
+  }
+
+  // TABLET MEDIA QUERY //
+  @include tablet {
+    padding: 48px 0 0 24px;
+  }
+  // DESKTOP MEDIA QUERY //
+  @include desktop {
+    border-left: 1px solid $mercury;
+    padding: 48px 0 0 24px;
+  }
+}
+
+.related-video {
+  display: flex;
+  margin-bottom: 24px;
+  &__thumbnail {
+    margin-right: 16px;
+    &--img {
+      @include thumbnail;
+    }
+  }
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 152px;
+    @include tablet {
+      width: 50%;
+    }
+  }
+  &__title {
+    @include subheader(14px, 22px);
+    color: $black;
+    /*Limit text to 2 lines*/
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  &__channel {
+    @include text(14px, 18px);
+    color: $black;
+  }
+}

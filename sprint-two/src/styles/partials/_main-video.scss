@@ -1,0 +1,86 @@
+// MAIN VIDEO PLAYER
+.video-player {
+  @extend .container;
+  background: black;
+  @include tablet {
+    padding: 0 24px;
+  }
+  @include desktop {
+    padding: 0 248px;
+  }
+  &__container {
+    position: relative;
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+  &__video {
+    max-width: 100%;
+  }
+  &__controls {
+    position: absolute;
+    padding: 0 16px;
+    z-index: 99;
+    bottom: 6px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__btn {
+    padding: 8px 16px;
+    border-radius: 4px;
+    color: white;
+    background: rgba(black, 0.6);
+    border: unset;
+    box-shadow: unset;
+    &:hover,
+    &:focus,
+    &:active {
+      cursor: pointer;
+      background: rgba(black, 1);
+      outline: 0;
+    }
+  }
+  &__btn-group {
+    display: flex;
+  }
+  &__progress-bar {
+    position: relative;
+    flex-grow: 1;
+    padding: 10px;
+    margin: 0 8px;
+    border-radius: 4px;
+    color: white;
+    background: rgba(black, 0.6);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include tablet {
+      margin: 0 16px;
+    }
+  }
+  &__progress-timeline {
+    height: 3px;
+    margin-right: 10px;
+    background: grey;
+    flex-grow: 1;
+  }
+  &__progress-scrubber {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: white;
+    border-radius: 50%;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  &__progress-text {
+    text-align: center;
+    @include text(14px, 18px);
+    display: none;
+    @include tablet {
+      display: block;
+    }
+  }
+}

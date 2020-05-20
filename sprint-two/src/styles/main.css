@@ -1,0 +1,749 @@
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.container, .comment-sidebar-wrapper, .site-header, .video-player, .video-info, .comments, .comments-list {
+  margin: 0 auto;
+  max-width: 1440px;
+}
+
+.comment-sidebar-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+@font-face {
+  font-family: "Avenir-Regular";
+  src: url("../assets/Fonts/AvenirNextProLT/AvenirNextLTPro-Regular.otf");
+}
+
+@font-face {
+  font-family: "Avenir-Bold";
+  src: url("../assets/Fonts/AvenirNextProLT/AvenirNextLTPro-Bold.otf");
+}
+
+@font-face {
+  font-family: "Avenir-Demi";
+  src: url("../assets/Fonts/AvenirNextProLT/AvenirNextLTPro-Demi.otf");
+}
+
+.site-header {
+  margin: 0 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media (min-width: 768px) {
+  .site-header {
+    margin: 0 24px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .site-header {
+    margin: 0 180px;
+  }
+}
+
+@media (min-width: 768px) {
+  .site-header {
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .site-header {
+    margin: 0 auto;
+    padding: 0 180px;
+  }
+}
+
+.site-header__logo {
+  margin: 12px auto;
+}
+
+@media (min-width: 768px) {
+  .site-header__logo {
+    margin: 12px 0;
+  }
+}
+
+.nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.nav__list {
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.nav__item--search-box {
+  font-family: "Avenir-Regular";
+  font-size: 16px;
+  line-height: 22px;
+  height: 48px;
+  width: 100%;
+  border-radius: 4px;
+  border: 2px solid #e1e1e1;
+  background: #fafafa;
+  outline: none;
+  color: #323232;
+  padding: 12px 32px;
+  background: url("../assets/Icons/SVG/Icon-search.svg");
+  background-repeat: no-repeat;
+  background-position: 10px;
+  width: 288px;
+  margin-bottom: 8px;
+}
+
+.nav__item--search-box:focus {
+  border: 2px solid #0095ff;
+}
+
+@media (min-width: 768px) {
+  .nav__item--search-box {
+    margin-bottom: 0;
+  }
+}
+
+.nav__item--btn {
+  font-family: "Avenir-Demi";
+  font-size: 14px;
+  line-height: 22px;
+  background: #0095ff;
+  border-radius: 4px;
+  border-style: 2px solid transparent;
+  border: 2px solid transparent;
+  outline: none;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 11px 11px;
+  width: 224px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
+
+.nav__item--btn:hover {
+  background: #0065ad;
+}
+
+@media (min-width: 768px) {
+  .nav__item--btn {
+    margin-left: 24px;
+    width: 96px;
+  }
+}
+
+.nav__item--icon {
+  margin-right: 16px;
+}
+
+.nav__item--profile-circle {
+  border-radius: 50%;
+  background: #afafaf;
+  height: 48px;
+  width: 48px;
+  background: url("../assets/Images/Mohan-muruge.jpg") no-repeat left;
+  background-size: cover;
+  margin-left: 16px;
+}
+
+@media (min-width: 768px) {
+  .nav__item--profile-circle {
+    margin-left: 24px;
+  }
+}
+
+.video-player {
+  background: black;
+}
+
+@media (min-width: 768px) {
+  .video-player {
+    padding: 0 24px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .video-player {
+    padding: 0 248px;
+  }
+}
+
+.video-player__container {
+  position: relative;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.video-player__video {
+  max-width: 100%;
+}
+
+.video-player__controls {
+  position: absolute;
+  padding: 0 16px;
+  z-index: 99;
+  bottom: 6px;
+  left: 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.video-player__btn {
+  padding: 8px 16px;
+  border-radius: 4px;
+  color: white;
+  background: rgba(0, 0, 0, 0.6);
+  border: unset;
+  -webkit-box-shadow: unset;
+          box-shadow: unset;
+}
+
+.video-player__btn:hover, .video-player__btn:focus, .video-player__btn:active {
+  cursor: pointer;
+  background: black;
+  outline: 0;
+}
+
+.video-player__btn-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.video-player__progress-bar {
+  position: relative;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  padding: 10px;
+  margin: 0 8px;
+  border-radius: 4px;
+  color: white;
+  background: rgba(0, 0, 0, 0.6);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (min-width: 768px) {
+  .video-player__progress-bar {
+    margin: 0 16px;
+  }
+}
+
+.video-player__progress-timeline {
+  height: 3px;
+  margin-right: 10px;
+  background: grey;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.video-player__progress-scrubber {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: white;
+  border-radius: 50%;
+  left: 10px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.video-player__progress-text {
+  text-align: center;
+  font-family: "Avenir-Regular";
+  font-size: 14px;
+  line-height: 18px;
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .video-player__progress-text {
+    display: block;
+  }
+}
+
+.video-info {
+  margin: 0 16px;
+  padding-top: 32px;
+}
+
+@media (min-width: 768px) {
+  .video-info {
+    margin: 0 24px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .video-info {
+    margin: 0 180px;
+  }
+}
+
+.video-info__title {
+  font-family: "Avenir-Bold";
+  font-size: 24px;
+  line-height: 32px;
+  color: #323232;
+}
+
+@media (min-width: 768px) {
+  .video-info__title {
+    font-family: "Avenir-Bold";
+    font-size: 36px;
+    line-height: 44px;
+  }
+}
+
+@media (min-width: 768px) {
+  .video-info {
+    padding-top: 48px;
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .video-info {
+    margin: 0 0 0 180px;
+    max-width: 712px;
+  }
+}
+
+.video-primary-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 16px 0 24px 0;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.video-primary-info__left-renderer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 24px;
+}
+
+.video-primary-info__left-renderer--channel-name {
+  font-family: "Avenir-Demi";
+  font-size: 18px;
+  line-height: 24px;
+  color: #323232;
+}
+
+.video-primary-info__left-renderer--upload-date {
+  font-family: "Avenir-Regular";
+  font-size: 16px;
+  line-height: 22px;
+  color: #afafaf;
+  margin-left: 16px;
+}
+
+.video-primary-info__right-renderer {
+  margin-bottom: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.video-primary-info__right-renderer--views {
+  font-family: "Avenir-Regular";
+  font-size: 14px;
+  line-height: 22px;
+  color: #323232;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.video-primary-info__right-renderer--likes {
+  font-family: "Avenir-Regular";
+  font-size: 14px;
+  line-height: 22px;
+  color: #323232;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 16px;
+}
+
+@media (min-width: 1440px) {
+  .video-primary-info__right-renderer--likes {
+    margin-right: 32px;
+  }
+}
+
+.video-primary-info__icon {
+  margin-right: 8px;
+}
+
+.video-secondary-info__text {
+  width: 100%;
+  margin: 0 0 40px 0;
+  font-family: "Avenir-Regular";
+  font-size: 14px;
+  line-height: 22px;
+}
+
+@media (min-width: 768px) {
+  .video-secondary-info__text {
+    width: 75%;
+  }
+}
+
+.comments {
+  margin: 0 16px;
+}
+
+@media (min-width: 768px) {
+  .comments {
+    margin: 0 24px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .comments {
+    margin: 0 180px;
+  }
+}
+
+.comments__count {
+  font-family: "Avenir-Demi";
+  font-size: 16px;
+  line-height: 24px;
+  color: #323232;
+}
+
+@media (min-width: 768px) {
+  .comments {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .comments {
+    margin: 0 0 0 180px;
+    max-width: 712px;
+  }
+}
+
+.comments-form {
+  border-bottom: 1px solid #e1e1e1;
+  padding-bottom: 24px;
+  margin-top: 32px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (min-width: 768px) {
+  .comments-form {
+    padding-bottom: 0;
+  }
+}
+
+.comments-form__profile-icon {
+  border-radius: 50%;
+  background: #afafaf;
+  height: 48px;
+  width: 48px;
+  background: url("../assets/Images/Mohan-muruge.jpg") no-repeat left;
+  background-size: cover;
+  margin-top: 24px;
+  margin-right: 16px;
+}
+
+.comments-form__comment-box-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 77.5%;
+}
+
+@media (min-width: 768px) {
+  .comments-form__comment-box-wrapper {
+    width: 100%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.comments-form__comment-box {
+  font-family: "Avenir-Regular";
+  font-size: 16px;
+  line-height: 22px;
+  height: 48px;
+  width: 100%;
+  border-radius: 4px;
+  border: 2px solid #e1e1e1;
+  background: #fafafa;
+  outline: none;
+  color: #323232;
+  padding: 12px 32px;
+  width: 100%;
+  max-width: 440px;
+  margin-bottom: 16px;
+  padding: 16px;
+}
+
+.comments-form__comment-box:focus {
+  border: 2px solid #0095ff;
+}
+
+.comments-form__comment-box--label {
+  font-family: "Avenir-Demi";
+  font-size: 12px;
+  line-height: 24px;
+  color: #afafaf;
+}
+
+.comments-form__btn {
+  font-family: "Avenir-Demi";
+  font-size: 14px;
+  line-height: 22px;
+  background: #0095ff;
+  border-radius: 4px;
+  border-style: 2px solid transparent;
+  border: 2px solid transparent;
+  outline: none;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 11px 0;
+  max-width: 224px;
+  width: 100%;
+  height: 48px;
+}
+
+.comments-form__btn:hover {
+  background: #0065ad;
+}
+
+@media (min-width: 768px) {
+  .comments-form__btn {
+    max-width: 160px;
+    margin: 8px 0 0 16px;
+  }
+}
+
+.comments-list {
+  padding: 0;
+}
+
+.comments-list__item {
+  border-bottom: 1px solid #e1e1e1;
+  margin-top: 24px;
+  padding-bottom: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.comments-list__item--name {
+  font-family: "Avenir-Demi";
+  font-size: 14px;
+  line-height: 22px;
+  margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  .comments-list__item--name {
+    margin-right: 16px;
+  }
+}
+
+.comments-list__item--date {
+  font-family: "Avenir-Regular";
+  font-size: 14px;
+  line-height: 22px;
+  color: #afafaf;
+}
+
+.comments-list__item--comment {
+  font-family: "Avenir-Regular";
+  font-size: 14px;
+  line-height: 18px;
+  margin-left: 62px;
+  max-width: 624px;
+}
+
+.comments-list__item--profile-icon {
+  border-radius: 50%;
+  background: #afafaf;
+  height: 48px;
+  width: 48px;
+  margin-right: 16px;
+}
+
+.related {
+  padding: 32px 0 0 16px;
+}
+
+.related__title {
+  font-family: "Avenir-Demi";
+  font-size: 16px;
+  line-height: 24px;
+  color: #afafaf;
+  margin-bottom: 40px;
+}
+
+.related__video-list-wrapper {
+  margin-top: 40px;
+}
+
+@media (min-width: 768px) {
+  .related {
+    padding: 48px 0 0 24px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .related {
+    border-left: 1px solid #e1e1e1;
+    padding: 48px 0 0 24px;
+  }
+}
+
+.related-video {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 24px;
+}
+
+.related-video__thumbnail {
+  margin-right: 16px;
+}
+
+.related-video__thumbnail--img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 4px;
+  width: 120px;
+  height: 70px;
+}
+
+.related-video__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 152px;
+}
+
+@media (min-width: 768px) {
+  .related-video__wrapper {
+    width: 50%;
+  }
+}
+
+.related-video__title {
+  font-family: "Avenir-Demi";
+  font-size: 14px;
+  line-height: 22px;
+  color: #323232;
+  /*Limit text to 2 lines*/
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.related-video__channel {
+  font-family: "Avenir-Regular";
+  font-size: 14px;
+  line-height: 18px;
+  color: #323232;
+}
+/*# sourceMappingURL=main.css.map */
