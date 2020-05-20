@@ -70,10 +70,9 @@
 // SECONDARY VIDEO INFO //
 .video-secondary-info {
   &__text {
-    max-width: 75%;
+    width: 100%;
     margin: 0 0 40px 0;
     @include text(14px, 22px);
-
     @include tablet {
       width: 75%;
     }

@@ -34,6 +34,9 @@
     flex-direction: column;
     justify-content: space-between;
     width: 152px;
+    @include tablet {
+      width: 50%;
+    }
   }
   &__title {
     @include subheader(14px, 22px);

@@ -77,9 +77,8 @@
     flex-wrap: wrap;
     &--name {
       @include subheader(14px, 22px);
-      flex-grow: 1;
+      margin-right: auto;
       @include tablet {
-        flex-grow: 0;
         margin-right: 16px;
       }
     }
