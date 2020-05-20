@@ -7,9 +7,11 @@
   justify-content: space-between;
   @include tablet {
     margin: 0 auto;
+    padding: 0 24px;
   }
   @include desktop {
     margin: 0 auto;
+    padding: 0 180px;
   }
   &__logo {
     margin: 12px auto;

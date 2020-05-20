@@ -1,5 +1,5 @@
 .related {
-  // @include offset;
+  padding: 32px 0 0 16px;
   &__title {
     @include subheader(16px, 24px);
     color: $silver;
@@ -8,9 +8,15 @@
   &__video-list-wrapper {
     margin-top: 40px;
   }
+
+  // TABLET MEDIA QUERY //
+  @include tablet {
+    padding: 48px 0 0 24px;
+  }
   // DESKTOP MEDIA QUERY //
   @include desktop {
-    width: 368px;
+    border-left: 1px solid $mercury;
+    padding: 48px 0 0 24px;
   }
 }
 

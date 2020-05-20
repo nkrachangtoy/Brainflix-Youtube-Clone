@@ -1,6 +1,7 @@
 .video-info {
   @extend .container;
   @include offset;
+  padding-top: 32px;
   &__title {
     @include header(24px, 32px);
     color: $black;
@@ -10,11 +11,13 @@
   }
   // TABLET MEDIA QUERY //
   @include tablet {
+    padding-top: 48px;
     max-width: 720px;
   }
 
   // DESKTOP MEDIA QUERY //
   @include desktop {
+    margin: 0 0 0 180px;
     max-width: 712px;
   }
 }
@@ -63,29 +66,16 @@
   &__icon {
     margin-right: 8px;
   }
-
-  // TABLET MEDIA QUERY //
-  @include tablet {
-    max-width: 720px;
-  }
-
-  // DESKTOP MEDIA QUERY //
-  @include desktop {
-    max-width: 712px;
-  }
 }
 // SECONDARY VIDEO INFO //
 .video-secondary-info {
   &__text {
+    max-width: 75%;
     margin: 0 0 40px 0;
     @include text(14px, 22px);
-  }
-  @include tablet {
-    max-width: 720px;
-  }
 
-  // DESKTOP MEDIA QUERY //
-  @include desktop {
-    max-width: 712px;
+    @include tablet {
+      width: 75%;
+    }
   }
 }

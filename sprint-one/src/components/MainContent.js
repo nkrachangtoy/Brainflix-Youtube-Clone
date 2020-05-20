@@ -69,15 +69,15 @@ export default function MainContent({
                     className="comments-form__comment-box"
                     placeholder="Write comment here"
                   />
-                  <button
-                    type="submit"
-                    id="commentCount"
-                    // onSubmit={handleClick}
-                    className="comments-form__btn"
-                  >
-                    COMMENT
-                  </button>
                 </form>
+                <button
+                  type="submit"
+                  id="commentCount"
+                  // onSubmit={handleClick}
+                  className="comments-form__btn"
+                >
+                  COMMENT
+                </button>
               </div>
             </div>
             {commentData.map((defaultComment) => (

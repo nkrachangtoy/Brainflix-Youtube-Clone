@@ -3,23 +3,22 @@
   @extend .container;
   background: black;
   @include tablet {
-    margin: 0 auto 48px auto;
     padding: 0 24px;
   }
   @include desktop {
-    margin: 0 auto 48px auto;
-    padding: 0 68px;
+    padding: 0 248px;
   }
   &__container {
     position: relative;
     max-width: 1080px;
-    margin: 0 auto 32px auto;
+    margin: 0 auto;
   }
   &__video {
     max-width: 100%;
   }
   &__controls {
     position: absolute;
+    padding: 0 16px;
     z-index: 99;
     bottom: 6px;
     left: 0;
@@ -29,15 +28,11 @@
   }
   &__btn {
     padding: 8px 16px;
-    margin: 0 8px;
     border-radius: 4px;
     color: white;
     background: rgba(black, 0.6);
     border: unset;
     box-shadow: unset;
-    @include desktop {
-      margin: 0 16px;
-    }
     &:hover,
     &:focus,
     &:active {
@@ -53,12 +48,16 @@
     position: relative;
     flex-grow: 1;
     padding: 10px;
+    margin: 0 8px;
     border-radius: 4px;
     color: white;
     background: rgba(black, 0.6);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @include tablet {
+      margin: 0 16px;
+    }
   }
   &__progress-timeline {
     height: 0.187rem;
