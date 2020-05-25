@@ -22,6 +22,7 @@ class MainContent extends Component {
   state = {
     videos: [],
     video: {},
+    loading: true,
   };
 
   /**
@@ -62,11 +63,15 @@ class MainContent extends Component {
    * This function will get a single video and update state
    */
   getVideo(videoId) {
+    if (videoId === undefined) {
+      videoId = "1af0jruup5gu";
+    }
     axios
       .get(`${this.apiURL}/videos/${videoId}/?api_key=${this.apiKEY}`)
       .then((response) => {
-        this.setState({ video: response.data });
+        this.setState({ video: response.data, loading: false });
       })
+
       .catch((error) => console.log(error));
   }
 
@@ -88,6 +93,19 @@ class MainContent extends Component {
       timestamp,
       comments,
     } = this.state.video;
+    const { videos } = this.state;
+    // if (id === undefined) {
+    //   return <p>Loading</p>;
+    // }
+
+    if (comments === undefined) {
+      return <p>Loading Comments</p>;
+    }
+    console.log(video);
+    if (video === undefined) {
+      return <p>Loading Side Videos</p>;
+    }
+
     return (
       <main>
         <div className="video-player">
@@ -95,7 +113,7 @@ class MainContent extends Component {
             <video
               poster={image}
               className="video-player__video"
-              src={video}
+              src={`${video}/?api_key=${this.apiKEY}`}
             ></video>
             <div className="video-player__controls">
               <button className="video-player__btn">
@@ -162,7 +180,9 @@ class MainContent extends Component {
               </div>
             </section>
             <section className="comments">
-              <span className="comments__count">{comments} Comments</span>
+              <span className="comments__count">
+                {!this.state.loading && comments.length} Comments
+              </span>
               <div className="comments-form">
                 <div className="comments-form__profile-icon"></div>
                 <div className="comments-form__comment-box-wrapper">
@@ -189,31 +209,33 @@ class MainContent extends Component {
                   </button>
                 </div>
               </div>
-              <ListComments />
-              {/* {comments.map((defaultComment) => (
-                <ListComments
-                  key={defaultComment.id}
-                  id={defaultComment.id}
-                  name={defaultComment.name}
-                  timestamp={defaultComment.timestamp}
-                  comment={defaultComment.comment}
-                />
-              ))} */}
+              {/* <ListComments /> */}
+              <ul className="comments-list">
+                {comments.map((defaultComment) => (
+                  <ListComments
+                    key={defaultComment.id}
+                    id={defaultComment.id}
+                    name={defaultComment.name}
+                    timestamp={defaultComment.timestamp}
+                    comment={defaultComment.comment}
+                  />
+                ))}
+              </ul>
             </section>
           </div>
           <aside className="side-videos">
             <span className="side-videos__title">NEXT VIDEO</span>
             <div className="side-videos-list-wrapper">
-              <ListSideVideo />
-              {/* {sideVideo.map((video) => (
+              {/* <ListSideVideo /> */}
+              {videos.map((sideVideos) => (
                 <ListSideVideo
-                  key={video.id}
-                  id={video.id}
-                  title={video.title}
-                  channel={video.channel}
-                  path={video.path}
+                  key={sideVideos.id}
+                  id={sideVideos.id}
+                  title={sideVideos.title}
+                  channel={sideVideos.channel}
+                  path={sideVideos.path}
                 />
-              ))} */}
+              ))}
             </div>
           </aside>
         </div>
