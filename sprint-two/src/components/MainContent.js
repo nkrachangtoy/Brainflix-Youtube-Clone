@@ -22,7 +22,6 @@ class MainContent extends Component {
   state = {
     videos: [],
     video: {},
-    loading: true,
   };
 
   /**
@@ -35,14 +34,12 @@ class MainContent extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    const oldVideoId = prevProps.match.params.id;
-    const newVideoId = this.props.match.params.id;
-    console.log("Old Video ID", oldVideoId);
-    if (newVideoId === oldVideoId) {
-      console.log("video id matches, no need to update state");
-    } else {
-      console.log("fetching new video");
-      this.getPost(newVideoId);
+    const oldVideoId = prevProps.match.params.videoId;
+    const newVideoId = this.props.match.params.videoId;
+
+    console.log(oldVideoId, newVideoId);
+    if (newVideoId !== oldVideoId) {
+      this.getVideo(newVideoId);
     }
   }
 
@@ -69,7 +66,7 @@ class MainContent extends Component {
     axios
       .get(`${this.apiURL}/videos/${videoId}/?api_key=${this.apiKEY}`)
       .then((response) => {
-        this.setState({ video: response.data, loading: false });
+        this.setState({ video: response.data });
       })
 
       .catch((error) => console.log(error));
@@ -80,6 +77,7 @@ class MainContent extends Component {
    */
 
   render() {
+    console.log(this.props);
     const {
       id,
       title,
@@ -94,14 +92,15 @@ class MainContent extends Component {
       comments,
     } = this.state.video;
     const { videos } = this.state;
-    // if (id === undefined) {
-    //   return <p>Loading</p>;
-    // }
+
+    if (id === undefined) {
+      return <p>Loading</p>;
+    }
 
     if (comments === undefined) {
       return <p>Loading Comments</p>;
     }
-    console.log(video);
+
     if (video === undefined) {
       return <p>Loading Side Videos</p>;
     }
@@ -113,11 +112,11 @@ class MainContent extends Component {
             <video
               poster={image}
               className="video-player__video"
-              src={`${video}/?api_key=${this.apiKEY}`}
+              // src={`${video}/?api_key=${this.apiKEY}`}
             ></video>
             <div className="video-player__controls">
               <button className="video-player__btn">
-                <img src={playIcon} />
+                <img src={playIcon} alt="Play Button" />
               </button>
 
               <div className="video-player__progress-bar">
@@ -125,6 +124,7 @@ class MainContent extends Component {
                   <img
                     className="video-player__progress-scrubber"
                     src={scrubberIcon}
+                    alt="Progress scrubber"
                   />
                 </div>
                 <div className="video-player__progress-text">
@@ -134,10 +134,10 @@ class MainContent extends Component {
 
               <div className="video-player__btn-group">
                 <button className="video-player__btn">
-                  <img src={fullScreenIcon} />
+                  <img src={fullScreenIcon} alt="Fullscreen Button" />
                 </button>
                 <button className="video-player__btn">
-                  <img src={volumeIcon} />
+                  <img src={volumeIcon} alt="Volume Control Button" />
                 </button>
               </div>
             </div>
@@ -181,7 +181,7 @@ class MainContent extends Component {
             </section>
             <section className="comments">
               <span className="comments__count">
-                {!this.state.loading && comments.length} Comments
+                {comments.length} Comments
               </span>
               <div className="comments-form">
                 <div className="comments-form__profile-icon"></div>
@@ -209,7 +209,6 @@ class MainContent extends Component {
                   </button>
                 </div>
               </div>
-              {/* <ListComments /> */}
               <ul className="comments-list">
                 {comments.map((defaultComment) => (
                   <ListComments
@@ -226,16 +225,11 @@ class MainContent extends Component {
           <aside className="side-videos">
             <span className="side-videos__title">NEXT VIDEO</span>
             <div className="side-videos-list-wrapper">
-              {/* <ListSideVideo /> */}
-              {videos.map((sideVideos) => (
-                <ListSideVideo
-                  key={sideVideos.id}
-                  id={sideVideos.id}
-                  title={sideVideos.title}
-                  channel={sideVideos.channel}
-                  path={sideVideos.path}
-                />
-              ))}
+              {videos
+                .filter((video) => video.id !== id)
+                .map((props) => (
+                  <ListSideVideo videos={videos} {...props} />
+                ))}
             </div>
           </aside>
         </div>

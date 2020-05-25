@@ -1,4 +1,5 @@
 import React from "react";
+import UploadPreviewImg from "../assets/Images/Upload-video-preview.jpg";
 
 function UploadPage() {
   return (
@@ -7,7 +8,11 @@ function UploadPage() {
       <div className="upload-page__container">
         <div className="upload-page__video-wrapper">
           <span className="upload-page__video--title">VIDEO THUMBNAIL</span>
-          <img src="" className="upload-page__video--thumbnail" />
+          <img
+            src={UploadPreviewImg}
+            className="upload-page__video--thumbnail"
+            alt="Video Thumbnail"
+          />
         </div>
         <form className="upload-page__form-wrapper">
           <label htmlFor="" className="upload-page__comment-box--label">

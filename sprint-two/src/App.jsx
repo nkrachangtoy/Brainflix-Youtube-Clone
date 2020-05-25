@@ -1,5 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 
 // IMPORT PAGE COMPONENTS //
 import Header from "./components/Header";
@@ -16,7 +21,7 @@ function App() {
         <Header />
         <Switch>
           <Route path="/" component={MainContent} exact />
-          <Route path="/videos" component={MainContent} />
+          <Route path="/videos" component={MainContent} exact />
           <Route path="/videos/:videoId" component={MainContent} />
           <Route path="/upload" component={UploadPage} exact />
         </Switch>
