@@ -1,6 +1,5 @@
 import React from "react";
-import UploadPreviewImg from "../assets/Images/Upload-video-preview.jpg";
-
+import PreviewImage from "../assets/Images/Upload-video-preview.jpg";
 function UploadPage() {
   return (
     <div className="upload-page">
@@ -9,7 +8,7 @@ function UploadPage() {
         <div className="upload-page__video-wrapper">
           <span className="upload-page__video--title">VIDEO THUMBNAIL</span>
           <img
-            src={UploadPreviewImg}
+            src={PreviewImage}
             className="upload-page__video--thumbnail"
             alt="Video Thumbnail"
           />
