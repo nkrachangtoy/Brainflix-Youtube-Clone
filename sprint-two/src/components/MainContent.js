@@ -30,12 +30,13 @@ class MainContent extends Component {
    */
   componentDidMount() {
     this.getVideos(); // call getVideos method, many videos
-    this.getVideos(1); // call getVideo method, single video
+    this.getVideo(); // call getVideo method, single video
   }
 
   componentDidUpdate(prevProps) {
     const oldVideoId = prevProps.match.params.id;
     const newVideoId = this.props.match.params.id;
+    console.log("Old Video ID", oldVideoId);
     if (newVideoId === oldVideoId) {
       console.log("video id matches, no need to update state");
     } else {
@@ -64,7 +65,6 @@ class MainContent extends Component {
     axios
       .get(`${this.apiURL}/videos/${videoId}/?api_key=${this.apiKEY}`)
       .then((response) => {
-        console.log(response.data);
         this.setState({ video: response.data });
       })
       .catch((error) => console.log(error));
@@ -189,10 +189,8 @@ class MainContent extends Component {
                   </button>
                 </div>
               </div>
-
               <ListComments />
-
-              {/* {commentData.map((defaultComment) => (
+              {/* {comments.map((defaultComment) => (
                 <ListComments
                   key={defaultComment.id}
                   id={defaultComment.id}

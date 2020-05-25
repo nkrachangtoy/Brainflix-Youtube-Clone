@@ -5,6 +5,7 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+  border-bottom: 1px solid $mercury;
   @include tablet {
     margin: 0 auto;
     padding: 0 24px;
@@ -23,6 +24,7 @@
 
 .nav {
   display: flex;
+
   &__list {
     padding: 0;
     display: flex;

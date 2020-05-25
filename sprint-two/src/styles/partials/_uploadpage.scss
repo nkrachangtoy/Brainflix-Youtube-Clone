@@ -1,28 +1,59 @@
 .upload-page {
   @extend .container;
-  border-top: 1px solid $mercury;
+  @include offset;
+  padding-top: 24px;
+  @include tablet {
+    padding-top: 48px;
+  }
   &__container {
     display: flex;
     flex-direction: column;
-    @include offset;
+    margin-top: 32px;
+    @include tablet {
+      border-top: 2px solid $mercury;
+    }
+    @include desktop {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: baseline;
+    }
   }
   &__title {
     @include header(24px, 32px);
     color: $black;
-    margin: 24px 0 32px 0;
+
     @include tablet {
       @include header(36px, 44px);
     }
+  }
+  &__video-wrapper {
+    display: flex;
+    flex-direction: column;
   }
 
   &__video {
     &--title {
       @include subheader(12px, 24px);
       color: $silver;
+      @include tablet {
+        margin-top: 40px;
+        @include subheader(14px, 24px);
+      }
     }
     &--thumbnail {
       @include upload-thumbnail;
       margin-bottom: 32px;
+      @include tablet {
+        margin-bottom: 40px;
+      }
+    }
+  }
+  &__form-wrapper {
+    display: flex;
+    flex-direction: column;
+    @include desktop {
+      width: 66.5%;
     }
   }
   &__comment-box {
@@ -30,28 +61,60 @@
       @include input-box;
       padding-left: 16px;
       margin-bottom: 24px;
+      max-width: 720px;
     }
     &--description {
       @include input-box;
       padding-left: 16px;
       margin-bottom: 32px;
       height: 143px;
+      max-width: 720px;
     }
     &--label {
       @include subheader(12px, 24px);
       color: $silver;
+      @include tablet {
+        @include subheader(14px, 24px);
+      }
+    }
+  }
+  &__btn-wrapper {
+    display: flex;
+    flex-direction: column;
+    @include tablet {
+      flex-direction: row;
+      justify-content: flex-end;
+      padding-top: 40px;
+      border-top: 2px solid $mercury;
     }
   }
   &__btn {
-    @include btn;
-    padding: 11px 0;
-    width: 100%;
-    max-width: 288px;
-    height: 48px;
-    margin-bottom: 24px;
-    @include tablet {
-      max-width: 160px;
-      margin: 8px 0 0 16px;
+    &--publish {
+      @include btn;
+      padding: 11px 0;
+      width: 100%;
+      max-width: 288px;
+      height: 48px;
+      margin-bottom: 24px;
+      @include tablet {
+        max-width: 160px;
+        margin: 8px 0 0 16px;
+      }
+    }
+    &--cancel {
+      @include btn;
+      color: $brainflix-blue;
+      background: $white;
+      width: 100%;
+      max-width: 288px;
+      height: 48px;
+      &:hover {
+        background: $white;
+      }
+      @include tablet {
+        max-width: 160px;
+        margin: 8px 0 0 16px;
+      }
     }
   }
 }
