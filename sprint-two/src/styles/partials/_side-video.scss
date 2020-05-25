@@ -1,4 +1,4 @@
-.related {
+.side-videos {
   padding: 32px 0 0 16px;
   &__title {
     @include subheader(16px, 24px);
@@ -15,14 +15,16 @@
   }
   // DESKTOP MEDIA QUERY //
   @include desktop {
-    border-left: 1px solid $mercury;
+    border-left: 2px solid $mercury;
     padding: 48px 0 0 24px;
   }
 }
 
-.related-video {
-  display: flex;
+.side-video {
   margin-bottom: 24px;
+  &__link {
+    display: flex;
+  }
   &__thumbnail {
     margin-right: 16px;
     &--img {
@@ -35,7 +37,7 @@
     justify-content: space-between;
     width: 152px;
     @include tablet {
-      width: 50%;
+      // width: 50%;
     }
   }
   &__title {

@@ -23,7 +23,7 @@ li {
   max-width: $desktop-width;
 }
 
-.comment-sidebar-wrapper {
+.main-content-wrapper {
   @extend .container;
   display: flex;
   flex-wrap: wrap;

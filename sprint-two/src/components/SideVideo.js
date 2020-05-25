@@ -1,15 +1,18 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-function ListSideVideo({ id, title, channel, path }) {
+function ListSideVideo() {
   return (
-    <div className="related-video">
-      <div className="related-video__thumbnail">
-        <img className="related-video__thumbnail--img" src={path} />
-      </div>
-      <div className="related-video__wrapper">
-        <span className="related-video__title">{title}</span>
-        <span className="related-video__channel">{channel}</span>
-      </div>
+    <div className="side-video">
+      <Link to="/videos/:id" className="side-video__link">
+        <div className="side-video__thumbnail">
+          <img className="side-video__thumbnail--img" src="" />
+        </div>
+        <div className="side-video__wrapper">
+          <span className="side-video__title">title</span>
+          <span className="side-video__channel">channel</span>
+        </div>
+      </Link>
     </div>
   );
 }

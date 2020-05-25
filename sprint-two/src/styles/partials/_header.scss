@@ -13,7 +13,7 @@
     margin: 0 auto;
     padding: 0 180px;
   }
-  &__logo {
+  &__navlink {
     margin: 12px auto;
     @include tablet {
       margin: 12px 0;
@@ -23,8 +23,6 @@
 
 .nav {
   display: flex;
-  &__logo {
-  }
   &__list {
     padding: 0;
     display: flex;
