@@ -73,15 +73,29 @@ class MainContent extends Component {
   /**
    * Component render method, create the UI
    */
+
   render() {
+    const {
+      id,
+      title,
+      channel,
+      image,
+      video,
+      description,
+      views,
+      likes,
+      duration,
+      timestamp,
+      comments,
+    } = this.state.video;
     return (
       <main>
         <div className="video-player">
           <div className="video-player__container">
             <video
-              poster={this.state.video.image}
+              poster={image}
               className="video-player__video"
-              src={this.state.video.video}
+              src={video}
             ></video>
             <div className="video-player__controls">
               <button className="video-player__btn">
@@ -96,7 +110,7 @@ class MainContent extends Component {
                   />
                 </div>
                 <div className="video-player__progress-text">
-                  0:00 / {this.state.video.duration}
+                  0:00 / {duration}
                 </div>
               </div>
 
@@ -114,16 +128,14 @@ class MainContent extends Component {
         <div className="main-content-wrapper">
           <div>
             <section className="video-info">
-              <span className="video-info__title">
-                {this.state.video.title}
-              </span>
+              <span className="video-info__title">{title}</span>
               <div className="video-primary-info">
                 <div className="video-primary-info__left-renderer">
                   <span className="video-primary-info__left-renderer--channel-name">
-                    By {this.state.video.channel}
+                    By {channel}
                   </span>
                   <span className="video-primary-info__left-renderer--upload-date">
-                    {this.state.video.timestamp}
+                    {dateUtil.timeSince(timestamp)}
                   </span>
                 </div>
                 <div className="video-primary-info__right-renderer">
@@ -133,7 +145,7 @@ class MainContent extends Component {
                       alt="View Icon"
                       className="video-primary-info__icon"
                     />
-                    {this.state.video.views}
+                    {views}
                   </span>
                   <span className="video-primary-info__right-renderer--likes">
                     <img
@@ -141,18 +153,16 @@ class MainContent extends Component {
                       alt="Like Icon"
                       className="video-primary-info__icon"
                     />
-                    {this.state.video.likes}
+                    {likes}
                   </span>
                 </div>
               </div>
               <div className="video-secondary-info">
-                <p className="video-secondary-info__text">
-                  {this.state.video.description}
-                </p>
+                <p className="video-secondary-info__text">{description}</p>
               </div>
             </section>
             <section className="comments">
-              <span className="comments__count">3 Comments</span>
+              <span className="comments__count">{comments} Comments</span>
               <div className="comments-form">
                 <div className="comments-form__profile-icon"></div>
                 <div className="comments-form__comment-box-wrapper">
@@ -179,7 +189,9 @@ class MainContent extends Component {
                   </button>
                 </div>
               </div>
+
               <ListComments />
+
               {/* {commentData.map((defaultComment) => (
                 <ListComments
                   key={defaultComment.id}
@@ -191,7 +203,7 @@ class MainContent extends Component {
               ))} */}
             </section>
           </div>
-          <section className="side-videos">
+          <aside className="side-videos">
             <span className="side-videos__title">NEXT VIDEO</span>
             <div className="side-videos-list-wrapper">
               <ListSideVideo />
@@ -205,7 +217,7 @@ class MainContent extends Component {
                 />
               ))} */}
             </div>
-          </section>
+          </aside>
         </div>
       </main>
     );

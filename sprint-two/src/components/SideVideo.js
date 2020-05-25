@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function ListSideVideo() {
   return (
     <div className="side-video">
-      <Link to="/videos/:id" className="side-video__link">
+      <Link to="/videos/" className="side-video__link">
         <div className="side-video__thumbnail">
           <img className="side-video__thumbnail--img" src="" />
         </div>
