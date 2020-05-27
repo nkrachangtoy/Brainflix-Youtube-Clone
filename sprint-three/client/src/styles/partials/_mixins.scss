@@ -1,0 +1,99 @@
+@import "./breakpoints";
+
+// FONT MIXINS //
+@mixin header($font-size, $line-height) {
+  font-family: "Avenir-Bold";
+  font-size: $font-size;
+  line-height: $line-height;
+}
+@mixin subheader($font-size, $line-height) {
+  font-family: "Avenir-Demi";
+  font-size: $font-size;
+  line-height: $line-height;
+}
+@mixin text($font-size, $line-height) {
+  font-family: "Avenir-Regular";
+  font-size: $font-size;
+  line-height: $line-height;
+}
+
+// MARGINS //
+@mixin offset {
+  margin: 0 16px;
+  @include tablet {
+    margin: 0 24px;
+  }
+  @include desktop {
+    margin: 0 180px;
+  }
+}
+
+// PROFILE CIRCLE //
+@mixin circle {
+  border-radius: 50%;
+  background: $silver;
+  height: 48px;
+  width: 48px;
+}
+@mixin profile-img($url) {
+  background: url($url) no-repeat left;
+  background-size: cover;
+}
+
+// BUTTON //
+@mixin btn {
+  @include subheader(14px, 22px);
+  background: $brainflix-blue;
+  border-radius: 4px;
+  border-style: 2px solid transparent;
+  border: 2px solid transparent;
+  outline: none;
+  color: $white;
+  cursor: pointer;
+  &:hover {
+    background: $brainflix-blue-dark;
+  }
+}
+
+// INPUT BOX //
+@mixin input-box {
+  @include text(16px, 22px);
+  height: 48px;
+  width: 100%;
+  border-radius: 4px;
+  border: 2px solid $mercury;
+  background: $alabaster;
+  outline: none;
+  color: $black;
+  padding: 12px 32px;
+  &:focus {
+    border: 2px solid $brainflix-blue;
+  }
+}
+
+// DIVIDER //
+@mixin divider {
+  border-bottom: 1px solid $mercury;
+}
+
+// VIDEO IMAGES //
+@mixin thumbnail {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 4px;
+  width: 120px;
+  height: 70px;
+}
+
+// UPLOAD THUMBNAIL IMAGE SIZE //
+@mixin upload-thumbnail {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 4px;
+  width: 288px;
+  height: 153px;
+  @include tablet {
+    width: 344px;
+    height: 183px;
+  }
+}
