@@ -14,10 +14,6 @@ import ListSideVideo from "./SideVideo";
 import dateUtil, { timeSince } from "./dateUtil";
 
 class MainContent extends Component {
-  //instance variables
-  apiURL = "https://project-2-api.herokuapp.com";
-  apiKEY = "45a8230c-9edb-48e2-ba52-917171c763bc";
-
   // Component state object
   state = {
     videos: [],

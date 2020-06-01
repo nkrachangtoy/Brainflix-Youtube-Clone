@@ -1,5 +1,4 @@
 const express = require("express");
-const cors = require("cors");
 
 const getVideo = require("./controller/getVideo");
 const getVideoList = require("./controller/getVideoList");
