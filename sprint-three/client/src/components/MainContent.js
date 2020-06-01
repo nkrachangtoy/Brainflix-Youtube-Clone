@@ -48,7 +48,8 @@ class MainContent extends Component {
    */
   getVideos() {
     axios
-      .get(`${this.apiURL}/videos/?api_key=${this.apiKEY}`)
+      .get(`/videos`)
+      // .get(`${this.apiURL}/videos/?api_key=${this.apiKEY}`)
       .then((response) => {
         console.log(response.data);
         this.setState({ videos: response.data });
@@ -64,7 +65,8 @@ class MainContent extends Component {
       videoId = "1af0jruup5gu";
     }
     axios
-      .get(`${this.apiURL}/videos/${videoId}/?api_key=${this.apiKEY}`)
+      .get(`/videos/${videoId}`)
+      // .get(`${this.apiURL}/videos/${videoId}/?api_key=${this.apiKEY}`)
       .then((response) => {
         this.setState({ video: response.data });
       })
