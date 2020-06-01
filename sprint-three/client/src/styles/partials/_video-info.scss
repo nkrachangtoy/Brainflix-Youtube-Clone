@@ -7,6 +7,7 @@
     color: $black;
     @include tablet {
       @include header(36px, 44px);
+      padding-right: 32px;
     }
   }
   // TABLET MEDIA QUERY //
