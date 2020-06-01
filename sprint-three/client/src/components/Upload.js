@@ -38,10 +38,10 @@ function UploadPage() {
         </form>
       </div>
       <div className="upload-page__btn-wrapper">
-        <button type="submit" className="upload-page__btn--publish">
+        <button type="submit" onClick="" className="upload-page__btn--publish">
           PUBLISH
         </button>
-        <button type="submit" className="upload-page__btn--cancel">
+        <button type="submit" onClick="" className="upload-page__btn--cancel">
           CANCEL
         </button>
       </div>

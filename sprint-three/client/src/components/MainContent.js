@@ -45,7 +45,6 @@ class MainContent extends Component {
   getVideos() {
     axios
       .get(`/videos`)
-      // .get(`${this.apiURL}/videos/?api_key=${this.apiKEY}`)
       .then((response) => {
         console.log(response.data);
         this.setState({ videos: response.data });
@@ -62,7 +61,6 @@ class MainContent extends Component {
     }
     axios
       .get(`/videos/${videoId}`)
-      // .get(`${this.apiURL}/videos/${videoId}/?api_key=${this.apiKEY}`)
       .then((response) => {
         this.setState({ video: response.data });
       })
@@ -75,7 +73,7 @@ class MainContent extends Component {
    */
 
   render() {
-    console.log(this.props);
+    console.log(this.state);
     const {
       id,
       title,
@@ -107,11 +105,7 @@ class MainContent extends Component {
       <main>
         <div className="video-player">
           <div className="video-player__container">
-            <video
-              poster={image}
-              className="video-player__video"
-              // src={`${video}/?api_key=${this.apiKEY}`}
-            ></video>
+            <video poster={image} className="video-player__video"></video>
             <div className="video-player__controls">
               <button className="video-player__btn">
                 <img src={playIcon} alt="Play Button" />
