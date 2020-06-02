@@ -30,7 +30,6 @@ const dateUtil = {
 };
 
 const timeFormat = () => dateUtil.timeSince();
-// console.log(timeFormat(1530744338878));
 
 export { timeFormat };
 export default dateUtil;
