@@ -23,7 +23,7 @@ Installation:
         npm install
         npm start
 
-To visit appL
+To visit app:
 
     localhost:3000
 
